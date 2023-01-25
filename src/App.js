@@ -1,25 +1,40 @@
-import logo from './logo.svg';
+import { useState } from 'react';
+import { Segment, Intro, Projects, Ideas, Fun } from './components/index';
 import './App.css';
 
 function App() {
+  // state of current page
+  const [currentPage, setCurrentPage] = useState('Hi');
+
+  // mappings from pages to components
+  const pages = {
+    Hi: <Intro />,
+    Projects: <Projects />,
+    Ideas: <Ideas />,
+    Fun: <Fun />,
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header style={{ ...styles.h1, fontSize: window.innerWidth > 450 ? 60 : 30 }}>
+        ssohamm
       </header>
+      <Segment setCurrentPage={setCurrentPage} currentPage={currentPage} />
+      {pages[currentPage]}
+      <br />
+      <br />
+      <br />
     </div>
   );
 }
+
+const styles = {
+  h1: {
+    fontFamily: '-apple-system, BlinkMacSystemFont, sans-serif',
+    fontWeight: 700,
+    fontSize: 30,
+    color: '#0F216B',
+  },
+};
 
 export default App;
