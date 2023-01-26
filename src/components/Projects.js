@@ -125,7 +125,9 @@ const styles = {
         alignItems: 'center',
         marginLeft: 20,
     },
-    textContainer: { textAlign: 'left' },
+    textContainer: {
+        textAlign: 'center',
+    },
     thumbnail: { width: 60, height: 60, borderRadius: 8 },
     itemHeader: {
         fontFamily: '-apple-system, BlinkMacSystemFont, sans-serif',

@@ -1,0 +1,84 @@
+.mainContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
+
+.leftColumn {
+    grid-column: 1 / 2;
+}
+
+.rightColumn {
+    grid-column: 2 / 3;
+}
+
+.contactDiv>span {
+    color: #B6EADA;
+    font-size: 3rem;
+    display: inline-block;
+    margin-bottom: 32px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    width: 100%;
+    color: #B6EADA;
+    --input-bg: #ffffff;
+}
+
+.formInput {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.formInput>span {
+    text-align: left;
+    margin: 12px 0;
+    font-size: 1.1rem;
+}
+
+.formInput>input,
+.formInput>textarea {
+    font-family: inherit;
+    color: #301E67;
+    border-radius: 3px;
+    width: 100%;
+    padding: 16px;
+    font-size: 1.05rem;
+    user-select: none;
+}
+
+.formInput>textarea {
+    height: 200px;
+    resize: none;
+}
+
+.formSubmit {
+    width: 150px;
+    padding: 16px;
+    border-radius: 1000px;
+    color: #ffffff;
+    background-color: #4B56D2;
+    border: none;
+    font-size: 1.1rem;
+}
+
+.formSubmit:hover {
+    color: #B6EADA;
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.formSubmit:disabled {
+    opacity: 0.6;
+    cursor: wait;
+}
+
+.formSubmit.success:disabled {
+    cursor: not-allowed;
+}

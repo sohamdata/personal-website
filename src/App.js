@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { Segment, Intro, Projects, Ideas, Fun } from './components/index';
+import { Segment, Intro, SkillsandInterests, Projects, Fun, Contact } from './components/index';
+import Gradient from './components/Gradient';
 import './App.css';
 
 function App() {
@@ -9,15 +10,21 @@ function App() {
   // mappings from pages to components
   const pages = {
     Hi: <Intro />,
+    SkillsandInterests: <SkillsandInterests />,
     Projects: <Projects />,
-    Ideas: <Ideas />,
     Fun: <Fun />,
+    Contact: <Contact />,
   };
 
   return (
     <div className="App">
       <header style={{ ...styles.h1, fontSize: window.innerWidth > 450 ? 60 : 30 }}>
-        ssohamm
+        <Gradient dir="left-to-right" from="#0064f2" to="#7400c5">
+          Soham{' '}
+        </Gradient>
+        <Gradient dir="left-to-right" from="#7400c5" to="#ff0074">
+          Datta
+        </Gradient>
       </header>
       <Segment setCurrentPage={setCurrentPage} currentPage={currentPage} />
       {pages[currentPage]}

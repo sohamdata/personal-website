@@ -5,26 +5,29 @@ export default function Intro() {
   return (
     <div>
       <p style={styles.paragraph}>
-        unga banga<br />
-        <br /> I'm currently a <a href="https://linkedin.com/in/sohamdata">banga unga</a> at{' '}
-        <a href="https://amazon.com">unga gunga</a> hunga <a href="https://google.com">unga</a> end end end
+        Hey there, 👋. Thanks for visiting.
+        <br />
+        <br /> I am a 19-year-old <span style={styles.empahsis}>Computer Science student and developer</span> from <span style={{ color: '#FF7B54' }}>India</span>.
         <br />
         <br />
-        My favorite programming languages are Python and Go, my favorite food is comic sans 🍣.
+        I am primarily intersted in <span style={styles.empahsis}>Front-end Web Development</span>, and I'm aiming to explore and deepen my understanding in various areas of technology and product development.
+        <br />
+        Currently, I am learning <span style={styles.empahsis}>backend development</span>, and exploring the world of <span style={styles.empahsis}>Cloud Computing</span>.
         <br />
         <br />
+        I use ReactJS, Javascript, Python, Go for my projects.
         Feel free to look around, or reach out through email below.
       </p>
       <br />
       <br />
       <div style={styles.anchorContainer}>
         <a href="mailto:hi@kanyeeast.me" style={styles.spanAnchor}>
-          <span style={styles.span}>
+          <span style={{ ...styles.span }}>
             Say hello <FontAwesomeIcon style={styles.icon} icon={faArrowRight} />
           </span>
         </a>
       </div>
-    </div>
+    </div >
   );
 }
 
@@ -33,6 +36,9 @@ const styles = {
     fontFamily: '-apple-system, BlinkMacSystemFont, sans-serif',
     fontSize: '1.3rem',
     color: '#adadad',
+  },
+  empahsis: {
+    color: '#4B56D2',
   },
   spanAnchor: {
     textDecoration: 'none',

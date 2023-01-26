@@ -1,6 +1,6 @@
 export default function Segment(props) {
   // to hold page names
-  const pages = ['Hi', 'Projects', 'Ideas', 'Fun'];
+  const pages = ['Hi', 'Skills and Interests', 'Projects', 'Fun', 'Contact'];
 
   return (
     <div style={styles.container}>
@@ -9,13 +9,13 @@ export default function Segment(props) {
           key={`${i}`}
           onClick={() => {
             // cookies.save('currentPage', page);
-            props.setCurrentPage(page);
+            props.setCurrentPage(page.replace(/\s/g, ""));
           }}
           style={{
             ...styles.block,
-            ...(page === props.currentPage
-              ? { backgroundColor: '#000000', color: '#f9f9f9' }
-              : { backgroundColor: '#f9f9f9', color: '#000000' }),
+            ...(page.replace(/\s/g, "") === props.currentPage
+              ? { backgroundColor: '#000000', color: '#4B56D2' }
+              : { backgroundColor: '#4B56D2', color: '#000000' }),
           }}
         >
           {page}
@@ -27,7 +27,7 @@ export default function Segment(props) {
 
 const styles = {
   container: {
-    borderRadius: 8,
+    borderRadius: 10,
     marginBottom: 50,
     marginTop: 20,
     display: 'flex',
@@ -35,7 +35,7 @@ const styles = {
     overflow: 'hidden',
     fontFamily: '-apple-system, BlinkMacSystemFont, sans-serif',
     padding: 6,
-    backgroundColor: '#f9f9f9',
+    backgroundColor: '#4B56D2',
     fontWeight: 600,
     cursor: 'pointer',
   },
@@ -44,6 +44,6 @@ const styles = {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    borderRadius: 8,
+    borderRadius: 10,
   },
 };
