@@ -9,7 +9,27 @@
 }
 
 .rightColumn {
-    grid-column: 2 / 3;
+    grid-column: 2 / 2;
+}
+
+.sociallink {
+    margin: 8px 0;
+    padding: 8px;
+}
+
+.sociallink a {
+    font-size: 1.1rem;
+    color: #B6EADA;
+    text-decoration: none;
+}
+
+.sociallink a:hover {
+    color: #4B56D2;
+}
+
+.rightColumn>span {
+    color: #B6EADA;
+    font-size: 2rem;
 }
 
 .contactDiv>span {
@@ -46,7 +66,7 @@
 .formInput>textarea {
     font-family: inherit;
     color: #301E67;
-    border-radius: 3px;
+    border-radius: 10px;
     width: 100%;
     padding: 16px;
     font-size: 1.05rem;

@@ -35,7 +35,7 @@ const styles = {
     overflow: 'hidden',
     fontFamily: '-apple-system, BlinkMacSystemFont, sans-serif',
     padding: 6,
-    backgroundColor: '#4B56D2',
+    backgroundColor: '#4B56D2 ',
     fontWeight: 600,
     cursor: 'pointer',
   },
