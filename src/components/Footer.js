@@ -9,13 +9,15 @@ export default function Footer() {
 const styles = {
     mainContainer: {
         width: '100%',
-        height: '3rem',
+        height: '11vh',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#0F216B',
         color: '#B6EADA',
         fontSize: '0.75rem',
+        // no gap at the end of page
+        marginBottom: '0',
     },
 
 }

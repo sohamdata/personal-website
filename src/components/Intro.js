@@ -21,7 +21,7 @@ export default function Intro() {
       <br />
       <br />
       <div style={styles.anchorContainer}>
-        <a href="" style={styles.spanAnchor}>
+        <a href="mailto:sohamdatta34@gmail.com" style={styles.spanAnchor}>
           <span style={{ ...styles.span }}>
             Say hello <FontAwesomeIcon style={styles.icon} icon={faArrowRight} />
           </span>
