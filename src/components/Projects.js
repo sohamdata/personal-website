@@ -86,11 +86,13 @@ export default function Projects() {
                                 </span>
                             ))}
                             <div style={styles.anchorContainer}>
-                                <a href={item.url} style={styles.spanAnchor} target="_blank" rel="noreferrer">
-                                    <span style={styles.span}>
-                                        {item.action} <FontAwesomeIcon style={styles.icon} icon={faArrowRight} />
-                                    </span>
-                                </a>
+                                {item.action.map((action, i) => (
+                                    <a href={item.url[i]} style={styles.spanAnchor} target="_blank" rel="noreferrer">
+                                        <span key={i} style={styles.span}>
+                                            {action} <FontAwesomeIcon style={styles.icon} icon={faArrowRight} />
+                                        </span>
+                                    </a>
+                                ))}
                             </div>
                         </div>
                     </div>
@@ -153,6 +155,7 @@ const styles = {
     },
     spanAnchor: {
         textDecoration: 'none',
+        marginRight: 20,
     },
     span: {
         backgroundColor: '#000000',
