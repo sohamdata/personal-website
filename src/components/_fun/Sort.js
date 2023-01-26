@@ -142,11 +142,10 @@ export default function Sort() {
       <header style={styles.itemHeader}>Sort Visualization</header>
       <br />
       <p style={styles.itemParagraph}>
-        Below is a simple visualization for various, famous sorting algorithms. Colors are really just hexadecimal
-        values, so they will be sorted as if the colors are numbers.
+        Colors are really just hexadecimal values, so they will be sorted as if the colors are numbers.
       </p>
       <br />
-      <button style={styles.betButton} onClick={() => generateColors(100)}>
+      <button style={styles.betButton} onClick={() => generateColors(50)}>
         Randomize
       </button>
       <br />
