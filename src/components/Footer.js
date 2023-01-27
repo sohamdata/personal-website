@@ -1,7 +1,8 @@
 export default function Footer() {
     return (
         <div style={styles.mainContainer}>
-            ©2023 Soham Datta
+            ©2023 Soham Datta<br />
+            This site is WIP, thanks for visiting :)
         </div>
     )
 }
@@ -16,7 +17,6 @@ const styles = {
         backgroundColor: '#0F216B',
         color: '#B6EADA',
         fontSize: '0.75rem',
-        // no gap at the end of page
         marginBottom: '0',
     },
 

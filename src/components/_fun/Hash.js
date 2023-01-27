@@ -21,15 +21,35 @@ function scrambleHash(inputString) {
   return scrambledString.join('');
 }
 
-function FNV1a(textToHash) {
-  let offset_basis = 2166136261;
-  let FNV_prime = 16777619;
-  let hash = offset_basis;
-  for (let i = 0; i < textToHash.length; i++) {
-    hash = hash ^ textToHash.charCodeAt(i);
-    hash = hash * FNV_prime;
+
+function infixToPostfixString(input) {
+  let output = "";
+  let stack = [];
+  let precedence = { "+": 1, "-": 1, "*": 2, "/": 2, "^": 3 };
+  for (let i = 0; i < input.length; i++) {
+    let char = input[i];
+    if (char === "(" || char === ")") {
+      if (char === "(") {
+        stack.push("(");
+      } else {
+        while (stack[stack.length - 1] !== "(") {
+          output += stack.pop();
+        }
+        stack.pop();
+      }
+    } else if (char in precedence) {
+      while (stack.length > 0 && precedence[char] <= precedence[stack[stack.length - 1]]) {
+        output += stack.pop();
+      }
+      stack.push(char);
+    } else {
+      output += char;
+    }
   }
-  return hash.toString(16);
+  while (stack.length > 0) {
+    output += stack.pop();
+  }
+  return output;
 }
 
 function hashAlgoHelper(algo, textToHash) {
@@ -38,8 +58,8 @@ function hashAlgoHelper(algo, textToHash) {
       return reversePairHash(textToHash);
     case 'scrambleHash':
       return scrambleHash(textToHash);
-    case 'FNV1a':
-      return FNV1a(textToHash);
+    case 'infixToPostfixString':
+      return infixToPostfixString(textToHash);
     default:
       return CryptoJS[algo](textToHash).toString();
   }
@@ -51,7 +71,7 @@ export default function Hash() {
 
   // hashing algorithms to use
   const hashes = ['SHA1', 'SHA224', 'SHA256', 'MD5'];
-  const customHash = ['reversePairHash', 'scrambleHash', 'FNV1a'];
+  const customHash = ['reversePairHash', 'scrambleHash', 'infixToPostfixString'];
 
   return (
     <div style={styles.itemContainer}>

@@ -79,13 +79,13 @@
 }
 
 .formSubmit {
+    font-family: inherit;
+    color: #ffffff;
+    background-color: #0F216B;
     width: 150px;
     padding: 16px;
     border-radius: 10px;
-    color: #ffffff;
-    background-color: #0F216B;
-    border: none;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
 }
 
 .formSubmit:hover {

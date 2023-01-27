@@ -3,11 +3,13 @@ import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 // assets
 import reach from '../assets/reach.gif';
-import garlicoin from '../assets/garlicoin.png';
-import lite from '../assets/lite.png';
-import reachv2 from '../assets/reachv2.gif';
-import golang from '../assets/golang.png';
-import asking from '../assets/asking.png';
+import perlinnoise from '../assets/perlinnoise.gif';
+import notesapp from '../assets/notesapp.png';
+import facerecog from '../assets/facerecog.png';
+import golang from '../assets/toSpotify.png';
+import wordle from '../assets/wordle.png';
+import cochef from '../assets/cochef.png';
+import tictactoe from '../assets/tictactoe.png';
 
 export default function Projects() {
     // items for projects
@@ -16,8 +18,8 @@ export default function Projects() {
             title: 'Co-Chef',
             description:
                 'Find the recipes of tens of thousands of dishes!',
-            image: asking,
-            stats: ['react', 'edamam', 'javascript'],
+            image: cochef,
+            stats: ['react', 'Edamam API', 'javascript'],
             action: ['Website', 'GitHub'],
             url: ['https://recipes-app-reactjs.web.app/', 'https://github.com/sohamdata/Co-Chef'],
         },
@@ -34,19 +36,28 @@ export default function Projects() {
             title: 'Notes App',
             description:
                 'Fullstack React app for taking notes with auth using GraphQL and AWS services.',
-            image: lite,
+            image: notesapp,
             stats: ['react', 'javascript', 'netlify', 'graphql', 'aws'],
             action: ['GitHub', 'Demo'],
             url: ['https://github.com/sohamdata/aws-sem3-project', 'https://user-images.githubusercontent.com/78294692/206841659-06aa6627-f2b6-4636-8492-3a3f725acc03.gif'],
         },
         {
+            title: 'wordle helper',
+            description:
+                'Python program to help you with wordle!',
+            image: wordle,
+            stats: ['python', 'wordle', 'oop'],
+            action: ['Github'],
+            url: ['https://github.com/sohamdata/wordlul'],
+        },
+        {
             title: 'face detection',
             description:
                 "Face and emotions detection website",
-            image: reachv2,
-            stats: ['HTML', 'CSS', 'Javascript', 'face-api.js'],
+            image: facerecog,
+            stats: ['HTML', 'CSS', 'JavaScript', 'face-api.js'],
             action: ['GitHub', 'Website'],
-            url: ['https://github.com/justadudewhohacks/face-api.js', 'https://sohamdata.github.io/facedetection/'],
+            url: ['https://github.com/sohamdata/facedetection', 'https://sohamdata.github.io/facedetection/'],
         },
         {
             title: 'Commander',
@@ -58,11 +69,20 @@ export default function Projects() {
             url: ['https://github.com/sohamdata/commanderRESTAPI'],
         },
         {
+            title: 'MiniMax Algorithm Tic-Tac-Toe',
+            description:
+                'Tic Tac Toe using the Min-Max Algorithm',
+            image: tictactoe,
+            stats: ['JavaScript', 'algorithms', 'HTML', 'CSS'],
+            action: ['GitHub', 'Website'],
+            url: ['https://github.com/sohamdata/tic-tac-toe-minmax', 'https://tic-tac-toe-mini-max.netlify.app/'],
+        },
+        {
             title: 'perlin noise',
             description:
                 'interesting visualizations produced by using p5.js library.',
-            image: garlicoin,
-            stats: ['p5.js', 'javascript'],
+            image: perlinnoise,
+            stats: ['p5.js', 'JavaScript'],
             action: ['GitHub', 'Website'],
             url: ['https://github.com/sohamdata/PerlinNoise', 'https://sohamdata.github.io/PerlinNoise/'],
         },
@@ -74,32 +94,28 @@ export default function Projects() {
             {items.map((item, i) => (
                 <div style={styles.itemContainer} key={`${i}`}>
                     <div style={styles.imageContainer}>
-                        <img src={item.image} style={styles.thumbnail} alt="thumbnail" />
+                        <img src={item.image} alt={item.title} style={styles.image} />
                     </div>
-                    <div style={styles.attributeContainer}>
-                        <div style={styles.textContainer}>
-                            <header style={styles.itemHeader}>{item.title}</header>
-                            <p style={styles.itemParagraph}>{item.description}</p>
-                            {item.stats.map(stat => (
-                                <span key={`${Math.random()}`} style={styles.itemBubble}>
-                                    {stat}
-                                </span>
+                    <div style={styles.textContainer}>
+                        <header style={styles.itemHeader}>{item.title}</header>
+                        <p style={styles.itemParagraph}>{item.description}</p>
+                        {item.stats.map(stat => (
+                            <span key={`${Math.random()}`} style={styles.itemBubble}>
+                                {stat}
+                            </span>
+                        ))}
+                        <div style={styles.anchorContainer}>
+                            {item.action.map((action, i) => (
+                                <a href={item.url[i]} style={styles.spanAnchor} target="_blank" rel="noreferrer">
+                                    <span key={i} style={styles.span}>
+                                        {action} <FontAwesomeIcon style={styles.icon} icon={faArrowRight} />
+                                    </span>
+                                </a>
                             ))}
-                            <div style={styles.anchorContainer}>
-                                {item.action.map((action, i) => (
-                                    <a href={item.url[i]} style={styles.spanAnchor} target="_blank" rel="noreferrer">
-                                        <span key={i} style={styles.span}>
-                                            {action} <FontAwesomeIcon style={styles.icon} icon={faArrowRight} />
-                                        </span>
-                                    </a>
-                                ))}
-                            </div>
                         </div>
                     </div>
                 </div>
             ))}
-            <br />
-            <br />
         </div>
     );
 }
@@ -116,48 +132,52 @@ const styles = {
         borderRadius: 8,
         marginTop: 26,
         display: 'flex',
-    },
-    imageContainer: { flexGrow: 0.5, display: 'flex', justifyContent: 'flex-start' },
-    attributeContainer: {
-        flexGrow: 0.5,
-        display: 'flex',
-        justifyContent: 'flex-start',
         alignItems: 'center',
-        marginLeft: 20,
+    },
+    imageContainer: {
+        width: '28%',
+        padding: '10px',
+    },
+    image: {
+        width: '100%',
     },
     textContainer: {
+        width: '60%',
+        padding: '10px',
         textAlign: 'center',
     },
-    thumbnail: { width: 60, height: 60, borderRadius: 8 },
     itemHeader: {
         fontFamily: '-apple-system, BlinkMacSystemFont, sans-serif',
         fontWeight: 700,
         fontSize: 26,
-        color: '#000000',
+        // fontSize: '1.5rem',
+        margin: '10px 0'
     },
     itemParagraph: {
         fontFamily: '-apple-system, BlinkMacSystemFont, sans-serif',
         fontSize: 16,
-        color: '#080808',
+        margin: '10px 0'
     },
     itemBubble: {
         backgroundColor: '#000000',
         color: '#f9f9f9',
         padding: 8,
         margin: 6,
-        borderRadius: 8,
+        borderRadius: 10,
         fontFamily: '-apple-system, BlinkMacSystemFont, sans-serif',
         fontSize: 12,
         fontWeight: 500,
         display: 'inline-block',
     },
     anchorContainer: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
         marginTop: 30,
         marginBottom: 20,
     },
     spanAnchor: {
         textDecoration: 'none',
-        marginRight: 20,
     },
     span: {
         backgroundColor: '#000000',
@@ -166,6 +186,7 @@ const styles = {
         fontWeight: 800,
         fontSize: 16,
         padding: '12px 16px',
+        margin: '0 8px',
         borderRadius: 8,
     },
     icon: {
