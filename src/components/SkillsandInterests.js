@@ -26,7 +26,7 @@ export default function SkillsandInterests() {
       <br />
       <br />
       <div style={styles.anchorContainer}>
-        <a href="https://github.com/sohamdata" style={styles.spanAnchor}>
+        <a href="https://github.com/sohamdata" style={styles.spanAnchor} target="_blank" rel="noreferrer">
           <span style={styles.span}>
             Github <FontAwesomeIcon style={styles.icon} icon={faArrowRight} />
           </span>
