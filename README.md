@@ -2,5 +2,5 @@
 
 to-do:
 - add backend for contact form
-- make responsive
+- make projects page responsive
 - tailwindCSS ?
