@@ -10,7 +10,7 @@ export default function Intro() {
         <br /> I am a 19-year-old <span style={styles.empahsis}>Computer Science student and developer</span> from <span style={{ color: '#FF7B54' }}>India</span>.
         <br />
         <br />
-        I am primarily intersted in <span style={styles.empahsis}>Front-end Web Development</span>, and I'm aiming to explore and deepen my understanding in various areas of technology and product development.
+        I am primarily interested in <span style={styles.empahsis}>Front-end Web Development</span>, aim to explore and deepen my understanding in various areas of technology and product development.
         <br />
         Currently, I am learning <span style={styles.empahsis}>backend development</span>, and exploring the world of <span style={styles.empahsis}>Cloud Computing</span>.
         <br />
