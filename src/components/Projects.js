@@ -10,6 +10,7 @@ import golang from '../assets/toSpotify.png';
 import wordle from '../assets/wordle.png';
 import cochef from '../assets/cochef.png';
 import tictactoe from '../assets/tictactoe.png';
+import sohamdatta from '../assets/sohamdatta.png';
 
 export default function Projects() {
     // items for projects
@@ -85,6 +86,15 @@ export default function Projects() {
             stats: ['p5.js', 'JavaScript'],
             action: ['GitHub', 'Website'],
             url: ['https://github.com/sohamdata/PerlinNoise', 'https://sohamdata.github.io/PerlinNoise/'],
+        },
+        {
+            title: 'sohamdatta.ga',
+            description:
+                'I made this website to teach myself and play around with HTML, CSS, Javascript, and markdown.',
+            image: sohamdatta,
+            stats: ['JavaScript', 'HTML', 'CSS', 'algorithms'],
+            action: ['GitHub', 'Website'],
+            url: ['https://github.com/sohamdata/website', 'https://sohamdatta.ga/'],
         },
     ];
 
