@@ -30,8 +30,8 @@ const styles = {
         marginBottom: 20,
     },
     itemContainer: {
+        backgroundImage: 'linear-gradient(90deg, #0064f2 0%, #7400c5 100%)',
         padding: '21px 30px',
-        backgroundColor: '#f9f9f9',
         borderRadius: 8,
         marginTop: 26,
     },
