@@ -2,6 +2,7 @@ import { useRef } from 'react';
 import styles from './Contact.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faTwitter, faLinkedin } from '@fortawesome/free-brands-svg-icons'
+import { faComments } from '@fortawesome/free-solid-svg-icons'
 
 export default function Hash() {
     const inputs = useRef({ name: "", email: "", message: "" })
@@ -49,6 +50,11 @@ export default function Hash() {
                             type="submit"
                             value="Send"
                             className={styles.formSubmit}
+                            // redirect to the feedback page after submitting the form
+                            onClick={(e) => {
+                                e.preventDefault();
+                                window.open("https://tally.so/r/3yMX9x", "_blank");
+                            }}
                         />
                     </form>
                 </div>
@@ -69,6 +75,12 @@ export default function Hash() {
                     <a href="https://twitter.com/sohamdata" target="_blank" rel="noreferrer">
                         <FontAwesomeIcon icon={faTwitter} size="2x" />
                     </a>
+                </div>
+                <div className={styles.sociallink}>
+                    <a href="https://tally.so/r/3yMX9x" target="_blank" rel="noreferrer">
+                        <FontAwesomeIcon icon={faComments} size="2x" />
+                    </a>
+                    <h3 style={{ fontSize: "0.5rem", color: "#B6EADA" }}>(Temporary contact form)</h3>
                 </div>
             </div>
         </div>
