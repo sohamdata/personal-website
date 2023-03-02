@@ -39,7 +39,7 @@ const styles = {
         fontFamily: '-apple-system, BlinkMacSystemFont, sans-serif',
         fontWeight: 700,
         fontSize: 26,
-        color: '#000000',
+        color: '#BDCDD6',
     },
     itemBubble: {
         backgroundColor: '#aaffaa',
@@ -55,7 +55,7 @@ const styles = {
     itemParagraph: {
         fontFamily: '-apple-system, BlinkMacSystemFont, sans-serif',
         fontSize: 16,
-        color: '#080808',
+        color: '#BDCDD6',
     },
     spanAnchor: {
         textDecoration: 'none',
@@ -73,29 +73,8 @@ const styles = {
         padding: '21px 30px',
         borderRadius: 8,
     },
-    hateSpan: {
-        backgroundColor: '#000000',
-        color: '#fff',
-        fontFamily: '-apple-system, BlinkMacSystemFont, sans-serif',
-        fontWeight: 500,
-        fontSize: 18,
-        padding: '21px 30px',
-        borderRadius: 8,
-    },
     icon: {
         marginRight: 10,
-    },
-    balanceIcon: {
-        marginRight: 10,
-    },
-    balanceSpan: {
-        backgroundColor: '#aaffaa',
-        color: '#050505',
-        padding: 16,
-        borderRadius: 8,
-        fontFamily: '-apple-system, BlinkMacSystemFont, sans-serif',
-        fontWeight: 500,
-        fontSize: 28,
     },
     colorBlock: {
         display: 'inline-block',
@@ -130,38 +109,10 @@ const styles = {
         outline: 'none',
         border: 'none',
     },
-    betInput: {
-        borderRadius: 8,
-        border: 'none',
-        overflow: 'hidden',
-        padding: 12,
-        fontFamily: '-apple-system, BlinkMacSystemFont, sans-serif',
-        color: '#f9f9f9',
-        backgroundColor: '#000000',
-        textAlign: 'center',
-        fontWeight: 500,
-        fontSize: 18,
-        width: 180,
-    },
-    error: {
-        color: '#e72a16',
-        fontFamily: '-apple-system, BlinkMacSystemFont, sans-serif',
-        fontWeight: 400,
-        fontSize: 16,
-    },
-    betStatContainer: {
-        marginTop: 10,
-    },
-    betStat: {
-        fontFamily: '-apple-system, BlinkMacSystemFont, sans-serif',
-        color: '#000000',
-        fontWeight: 500,
-    },
-    algoLabel: { fontFamily: '-apple-system, BlinkMacSystemFont, sans-serif', color: '#000000', fontWeight: 500 },
     algoSelect: {
-        border: '2px solid #000000',
+        border: '2px solid #16003B',
         fontFamily: '-apple-system, BlinkMacSystemFont, sans-serif',
-        color: '#000000',
+        color: '#16003B',
         fontWeight: 500,
         borderRadius: 8,
         appearance: 'none',

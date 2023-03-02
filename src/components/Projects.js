@@ -103,8 +103,8 @@ export default function Projects() {
                 'If you want to help in improving this website, create a pull request on my GitHub repository.',
             image: butterflyEffect,
             stats: ['ReactJS'],
-            action: ['GitHub'],
-            url: ['https://github.com/sohamdata/personal-website',],
+            action: ['GitHub', 'Feedback'],
+            url: ['https://github.com/sohamdata/personal-website', 'https://tally.so/r/3yMX9x'],
         },
     ];
 

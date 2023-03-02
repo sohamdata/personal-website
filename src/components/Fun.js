@@ -8,6 +8,7 @@ const musicFiles = musicContext.keys().map(musicContext);
 export default function Fun() {
   const randomSongIndex = Math.floor(Math.random() * musicFiles.length);
   const audio = useMemo(() => new Audio(musicFiles[randomSongIndex]), [randomSongIndex]);
+  audio.loop = true;
 
   useEffect(() => {
     // Play audio when Fun page is mounted
