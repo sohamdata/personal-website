@@ -11,6 +11,7 @@ import wordle from '../assets/wordle.png';
 import cochef from '../assets/cochef.png';
 import tictactoe from '../assets/tictactoe.png';
 import sohamdatta from '../assets/sohamdatta.png';
+import butterflyEffect from '../assets/butterflyEffect.png';
 
 export default function Projects() {
     // items for projects
@@ -95,6 +96,15 @@ export default function Projects() {
             stats: ['JavaScript', 'HTML', 'CSS', 'algorithms'],
             action: ['GitHub', 'Website'],
             url: ['https://github.com/sohamdata/website', 'https://sohamdatta.ga/'],
+        },
+        {
+            title: 'this website',
+            description:
+                'If you want to help in improving this website, create a pull request on my GitHub repository.',
+            image: butterflyEffect,
+            stats: ['ReactJS'],
+            action: ['GitHub'],
+            url: ['https://github.com/sohamdata/personal-website',],
         },
     ];
 
