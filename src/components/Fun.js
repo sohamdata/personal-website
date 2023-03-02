@@ -1,15 +1,17 @@
 import React, { useEffect, useMemo } from 'react';
 import { Hash, Sort } from './_fun';
 import Background from './Background';
-import closer2 from '../assets/closer2.aac';
+
+const musicContext = require.context('../assets/music/', false, /\.(aac)$/);
+const musicFiles = musicContext.keys().map(musicContext);
 
 export default function Fun() {
-  const audio = useMemo(() => new Audio(closer2), []);
-  // useMemo is used to prevent the audio from being reloaded on every render
+  const randomSongIndex = Math.floor(Math.random() * musicFiles.length);
+  const audio = useMemo(() => new Audio(musicFiles[randomSongIndex]), [randomSongIndex]);
 
   useEffect(() => {
     // Play audio when Fun page is mounted
-    audio.volume = 0.2;
+    audio.volume = 0.3;
     audio.play();
 
     // Pause audio when Fun page is unmounted

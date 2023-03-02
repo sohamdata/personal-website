@@ -7,7 +7,7 @@ export default function Sort() {
   const [sorting, setSorting] = useState(false);
 
   // eslint-disable-next-line
-  useEffect(() => generateColors(50), []);
+  useEffect(() => generateColors(100), []);
 
   // helper method to generate n random colors, and set them into state
   const generateColors = n => {
@@ -129,23 +129,120 @@ export default function Sort() {
     setSorting(false);
   };
 
+  // merge sort
+  const mergeSort = async () => {
+    setSorting(true);
+    const colors_ = [...colors];
+
+    const merge = async (l, m, r) => {
+      const leftArray = colors_.slice(l, m + 1);
+      const rightArray = colors_.slice(m + 1, r + 1);
+      let i = 0,
+        j = 0,
+        k = l;
+      while (i < leftArray.length && j < rightArray.length) {
+        if (colorToInt(leftArray[i]) <= colorToInt(rightArray[j])) {
+          colors_[k] = leftArray[i];
+          i++;
+        } else {
+          colors_[k] = rightArray[j];
+          j++;
+        }
+        setColors([...colors_]);
+        await timer(10);
+        k++;
+      }
+
+      while (i < leftArray.length) {
+        colors_[k] = leftArray[i];
+        i++;
+        k++;
+        setColors([...colors_]);
+        await timer(10);
+      }
+
+      while (j < rightArray.length) {
+        colors_[k] = rightArray[j];
+        j++;
+        k++;
+        setColors([...colors_]);
+        await timer(10);
+      }
+    };
+
+    const mergeSortHelper = async (l, r) => {
+      if (l < r) {
+        const m = Math.floor((l + r) / 2);
+        await mergeSortHelper(l, m);
+        await mergeSortHelper(m + 1, r);
+        await merge(l, m, r);
+      }
+    };
+
+    await mergeSortHelper(0, colors_.length - 1);
+    setSorting(false);
+  };
+
+  // heap sort
+  const heapSort = async () => {
+    setSorting(true);
+    const colors_ = [...colors];
+
+    const heapify = async (n, i) => {
+      let largest = i;
+      const left = 2 * i + 1;
+      const right = 2 * i + 2;
+
+      if (left < n && colorToInt(colors_[left]) > colorToInt(colors_[largest])) {
+        largest = left;
+      }
+
+      if (right < n && colorToInt(colors_[right]) > colorToInt(colors_[largest])) {
+        largest = right;
+      }
+
+      if (largest !== i) {
+        [colors_[i], colors_[largest]] = [colors_[largest], colors_[i]];
+        setColors([...colors_]);
+        await timer(1);
+        await heapify(n, largest);
+      }
+    };
+
+    for (let i = Math.floor(colors_.length / 2) - 1; i >= 0; i--) {
+      await heapify(colors_.length, i);
+    }
+
+    for (let i = colors_.length - 1; i > 0; i--) {
+      [colors_[0], colors_[i]] = [colors_[i], colors_[0]];
+      setColors([...colors_]);
+      await timer(1);
+      await heapify(i, 0);
+    }
+
+    setSorting(false);
+  };
 
   const algos = {
-    'Selection Sort': selectionSort,
-    'Bubble Sort': bubbleSort,
-    'Insertion Sort': insertionSort,
-    'Quick Sort': quickSort,
+    'Selection Sort (O(n^2))': selectionSort,
+    'Bubble Sort (O(n^2))': bubbleSort,
+    'Insertion Sort (O(n^2))': insertionSort,
+    'Quick Sort (O(nlogn))': quickSort,
+    'Merge Sort (O(nlogn))': mergeSort,
+    'Heap Sort (O(nlogn))': heapSort,
   };
 
   return (
     <div style={styles.itemContainer}>
-      <header style={styles.itemHeader}>Sort Visualization</header>
+      <header style={styles.itemHeader}>Sorting Visualization</header>
       <br />
       <p style={styles.itemParagraph}>
         Colors are really just hexadecimal values, so they will be sorted as if the colors are numbers.
+        <br />
+        A way of knowing that the sorting is done is when the colors go from dark to light <br />(kind of fade away)
       </p>
       <br />
-      <button style={styles.betButton} onClick={() => generateColors(50)}>
+      <button style={styles.betButton} onClick={() => generateColors(100)}>
         Randomize
       </button>
       <br />
@@ -167,7 +264,6 @@ export default function Sort() {
         onClick={() => {
           if (!sorting) {
             algos[selectedAlgo]();
-            // ReactGA.event({ category: 'Interaction', action: `${selectedAlgo}` });
           }
         }}
       >
@@ -177,6 +273,8 @@ export default function Sort() {
       {colors.map((color, i) => (
         <div key={`${i}`} style={{ ...styles.colorCell, backgroundColor: color }} />
       ))}
+      <p style={{ ...styles.itemParagraph, fontSize: '0.7rem', fontStyle: 'italic' }}>
+        if the Randomize button seems stuck, it (probably) means the sorting is still in progress </p>
     </div>
   );
 }
