@@ -31,6 +31,11 @@ export default function SkillsandInterests() {
             Github <FontAwesomeIcon style={styles.icon} icon={faArrowRight} />
           </span>
         </a>
+        <a href="https://tally.so/r/3yMX9x" style={styles.spanAnchor} target="_blank" rel="noreferrer">
+          <span style={styles.span}>
+            Resume<FontAwesomeIcon style={styles.icon} icon={faArrowRight} />
+          </span>
+        </a>
       </div>
     </div>
   );
@@ -76,6 +81,7 @@ const styles = {
     fontSize: 18,
     padding: '21px 30px',
     borderRadius: 8,
+    margin: 10,
   },
   icon: {
     marginLeft: 8,

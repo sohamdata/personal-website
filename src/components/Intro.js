@@ -14,6 +14,7 @@ export default function Intro() {
         <br />
         Currently, I am learning <span style={styles.empahsis}>backend development</span>, and exploring the world of <span style={styles.empahsis}>Cloud Computing</span>.
         <br />
+        <span style={{ color: '#FF7B54' }}>Looking for a summer 2023 internship.</span>
         <br />
         I use ReactJS, Javascript, Python, Go for my projects.
         Feel free to look around, or reach out through email below.
