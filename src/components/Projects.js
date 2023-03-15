@@ -12,6 +12,7 @@ import cochef from '../assets/cochef.png';
 import tictactoe from '../assets/tictactoe.png';
 import sohamdatta from '../assets/sohamdatta.png';
 import butterflyEffect from '../assets/butterflyEffect.png';
+import logindash from '../assets/logindash.gif';
 
 export default function Projects() {
     // items for projects
@@ -21,7 +22,7 @@ export default function Projects() {
             description:
                 'Find the recipes of tens of thousands of dishes!',
             image: cochef,
-            stats: ['react', 'Edamam API', 'javascript'],
+            stats: ['ReactJS', 'Edamam API', 'JavaScript'],
             action: ['Website', 'GitHub'],
             url: ['https://recipes-app-reactjs.web.app/', 'https://github.com/sohamdata/Co-Chef'],
         },
@@ -39,7 +40,7 @@ export default function Projects() {
             description:
                 'Fullstack React app for taking notes with auth using GraphQL and AWS services.',
             image: notesapp,
-            stats: ['react', 'javascript', 'netlify', 'graphql', 'aws'],
+            stats: ['ReactJS', 'JavaScript', 'graphql', 'aws'],
             action: ['GitHub', 'Demo'],
             url: ['https://github.com/sohamdata/aws-sem3-project', 'https://user-images.githubusercontent.com/78294692/206841659-06aa6627-f2b6-4636-8492-3a3f725acc03.gif'],
         },
@@ -51,6 +52,15 @@ export default function Projects() {
             stats: ['python', 'wordle', 'oop'],
             action: ['Github'],
             url: ['https://github.com/sohamdata/wordlul'],
+        },
+        {
+            title: 'Login Dashboard',
+            description:
+                'A login dashboard with field validation and user authentication local storage using ReactJS, made to practice React Hooks.',
+            image: logindash,
+            stats: ['ReactJS'],
+            action: ['GitHub', 'Live'],
+            url: ['https://github.com/sohamdata/react-login-dashboard', 'https://login-dash.netlify.app/'],
         },
         {
             title: 'face detection',
@@ -75,7 +85,7 @@ export default function Projects() {
             description:
                 'Tic Tac Toe using the Min-Max Algorithm',
             image: tictactoe,
-            stats: ['JavaScript', 'algorithms', 'HTML', 'CSS'],
+            stats: ['JavaScript', 'algorithms', 'minimax', 'HTML', 'CSS'],
             action: ['GitHub', 'Website'],
             url: ['https://github.com/sohamdata/tic-tac-toe-minmax', 'https://tic-tac-toe-mini-max.netlify.app/'],
         },
@@ -91,7 +101,7 @@ export default function Projects() {
         {
             title: 'sohamdatta.ga',
             description:
-                'I made this website to teach myself and play around with HTML, CSS, Javascript, and markdown.',
+                'I made this website to teach myself and play around with HTML, CSS, JavaScript, and markdown.',
             image: sohamdatta,
             stats: ['JavaScript', 'HTML', 'CSS', 'algorithms'],
             action: ['GitHub', 'Website'],
