@@ -1,9 +1,9 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import BinaryString from './_fun/BinaryString';
 
 export default function SkillsandInterests() {
 
-  // different technologies and languages
   const items = [
     { name: 'Programming Languages', tags: ['Python', 'C++', 'JavaScript', 'Java', 'Go', 'SQL'] },
     { name: 'Tools/Frameworks', tags: ['Git', 'ReactJS', 'AWS', 'GCP', 'Node.js', 'HTML', 'CSS', 'Bootstrap', 'Tailwind CSS', 'Docker', 'Linux', 'UML diagrams'] },
@@ -37,6 +37,8 @@ export default function SkillsandInterests() {
           </span>
         </a>
       </div>
+      <br /> <br />
+      <BinaryString />
     </div>
   );
 }
