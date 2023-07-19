@@ -242,8 +242,8 @@ export default function Sort() {
       </button>
       <br />
       <form action="#">
-        <label htmlFor="algo" style={styles.itemParagraph}>
-          Algorithm:{' '}
+        <label htmlFor="algo" style={{ ...styles.itemParagraph, marginRight: 10 }}>
+          Algorithm:
         </label>
         <select id="algo" name="algo" style={styles.algoSelect} onChange={(e) => setSelectedAlgo(e.target.value)}>
           {Object.keys(algos).map(algo => (
