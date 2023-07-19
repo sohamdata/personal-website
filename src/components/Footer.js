@@ -1,11 +1,11 @@
 export default function Footer() {
     const shader = () => {
-        window.open("https://sohamdatta.ga/", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=400,height=400");
+        window.open("https://sohamdata.github.io/website/", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=400,height=400");
     }
     return (
         <div style={styles.mainContainer}>
             ©2023 Soham Datta<br />
-            This site is WIP, thanks for visiting <h1 style={styles.link} onClick={shader}>:)</h1>
+            This site is WIP, thanks for visiting <h1 style={styles.link} onClick={shader}>{':)'}</h1>
         </div>
     )
 }
