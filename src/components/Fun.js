@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo } from 'react';
-import { Hash, Sort } from './_fun';
+import { Hash, Sort } from './FunItems';
 import Background from './Background';
 
 const musicContext = require.context('../assets/music/', false, /\.(aac)$/);
