@@ -3,13 +3,11 @@ import styles from './styles';
 
 export default function Sort() {
   const [colors, setColors] = useState([]);
-  const [selectedAlgo, setSelectedAlgo] = useState('Selection Sort');
+  const [selectedAlgo, setSelectedAlgo] = useState('Selection Sort (O(n^2))');
   const [sorting, setSorting] = useState(false);
 
-  // eslint-disable-next-line
   useEffect(() => generateColors(100), []);
 
-  // helper method to generate n random colors, and set them into state
   const generateColors = n => {
     if (sorting) return;
     const colors_ = [];
@@ -17,7 +15,6 @@ export default function Sort() {
     for (let i = 0; i < n; i++) {
       // generate random number in [0, 0xFFFFFF] (color range)
       const num = ~~(Math.random() * (0xffffff + 1));
-      // push hex to colors_
       colors_.push('#' + num.toString(16).padStart(6, 0));
     }
 
@@ -32,11 +29,10 @@ export default function Sort() {
    */
   const colorToInt = color => {
     const [r, g, b] = [color.slice(1, 3), color.slice(3, 5), color.slice(5, 7)];
-    // return sum of hues
     return parseInt(r, 16) + parseInt(g, 16) + parseInt(b, 16);
   };
 
-  // selection sort
+  // SELECTION SORT
   const selectionSort = async () => {
     setSorting(true);
     const colors_ = [...colors];
@@ -50,13 +46,12 @@ export default function Sort() {
       }
       [colors_[i], colors_[min]] = [colors_[min], colors_[i]];
       setColors([...colors_]);
-      // sleep
       await timer(100);
     }
     setSorting(false);
   };
 
-  // bubble sort
+  // BUBBLE SORT
   const bubbleSort = async () => {
     setSorting(true);
     const colors_ = [...colors];
@@ -76,7 +71,7 @@ export default function Sort() {
     setSorting(false);
   };
 
-  // insertion sort
+  // INSERTION SORT
   const insertionSort = async () => {
     setSorting(true);
     const colors_ = [...colors];
@@ -95,7 +90,7 @@ export default function Sort() {
     setSorting(false);
   };
 
-  // quick sort
+  // QUICK SORT
   const quickSort = async () => {
     setSorting(true);
     const colors_ = [...colors];
@@ -129,7 +124,7 @@ export default function Sort() {
     setSorting(false);
   };
 
-  // merge sort
+  // MERGE SORT
   const mergeSort = async () => {
     setSorting(true);
     const colors_ = [...colors];
@@ -183,7 +178,7 @@ export default function Sort() {
     setSorting(false);
   };
 
-  // heap sort
+  // HEAP SORT
   const heapSort = async () => {
     setSorting(true);
     const colors_ = [...colors];
@@ -250,7 +245,7 @@ export default function Sort() {
         <label htmlFor="algo" style={styles.itemParagraph}>
           Algorithm:{' '}
         </label>
-        <select id="algo" name="algo" style={styles.algoSelect} onChange={e => setSelectedAlgo(e.target.value)}>
+        <select id="algo" name="algo" style={styles.algoSelect} onChange={(e) => setSelectedAlgo(e.target.value)}>
           {Object.keys(algos).map(algo => (
             <option key={algo} value={algo}>
               {algo}
@@ -271,7 +266,7 @@ export default function Sort() {
       </button>
       <br />
       {colors.map((color, i) => (
-        <div key={`${i}`} style={{ ...styles.colorCell, backgroundColor: color }} />
+        <div key={i} style={{ ...styles.colorCell, backgroundColor: color }} />
       ))}
       <p style={{ ...styles.itemParagraph, fontSize: '0.7rem', fontStyle: 'italic' }}>
         if the Randomize button seems stuck, it (probably) means the sorting is still in progress </p>
