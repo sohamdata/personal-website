@@ -11,10 +11,8 @@ export default function Fun() {
   audio.loop = true;
 
   useEffect(() => {
-    // Play audio when Fun page is mounted
     audio.volume = 0.3;
     audio.play();
-
     // Pause audio when Fun page is unmounted
     return () => audio.pause();
   }, [audio]);

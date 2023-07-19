@@ -1,13 +1,13 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import BinaryString from './_fun/BinaryString';
+import BinaryString from './fun/BinaryString';
 
 export default function SkillsandInterests() {
 
   const items = [
-    { name: 'Programming Languages', tags: ['Python', 'C++', 'JavaScript', 'Java', 'Go', 'SQL'] },
-    { name: 'Tools/Frameworks', tags: ['Git', 'ReactJS', 'AWS', 'GCP', 'Node.js', 'HTML', 'CSS', 'Bootstrap', 'Tailwind CSS', 'Docker', 'Linux', 'UML diagrams'] },
-    { name: 'Hobbies', tags: ['Outdoors', 'Podcasts', 'Mountain biking', 'Computers', 'Guitar', 'Football', 'Video Games', 'Travel', 'The Internet'] },
+    { name: 'Programming Languages', tags: ['Python', 'JavaScript', 'TypeScript', 'Node.js', 'C++', 'Java', 'SQL', 'Go'] },
+    { name: 'Tools/Frameworks', tags: ['Git', 'NextJS/ReactJS', 'NoSQL (MongoDB, Firebase)', 'Django', 'AWS', 'Node.js', 'HTML', 'CSS', 'Bootstrap', 'Tailwind CSS', 'Docker', 'Linux', 'UML diagrams'] },
+    { name: 'Hobbies', tags: ['Outdoors', 'Travel', 'Mountain biking', 'Computers', 'Guitar', 'Football', 'Video Games', 'Open Source', 'The Internet'] },
   ];
 
   return (
