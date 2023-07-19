@@ -50,7 +50,6 @@ export default function Hash() {
                             type="submit"
                             value="Send"
                             className={styles.formSubmit}
-                            // redirect to the feedback page after submitting the form
                             onClick={(e) => {
                                 e.preventDefault();
                                 window.open("https://tally.so/r/3yMX9x", "_blank");

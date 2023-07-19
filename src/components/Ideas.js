@@ -1,6 +1,5 @@
 export default function Ideas() {
 
-  // different technologies and languages
   const items = [
     {
       name: 'one use instagram',

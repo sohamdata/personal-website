@@ -8,7 +8,6 @@ export default function Segment(props) {
         <div
           key={`${i}`}
           onClick={() => {
-            // cookies.save('currentPage', page);
             props.setCurrentPage(page.replace(/\s/g, ""));
           }}
           style={{
