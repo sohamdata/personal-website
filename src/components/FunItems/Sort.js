@@ -5,7 +5,7 @@ export default function Sort() {
   const [colors, setColors] = useState([]);
   const [selectedAlgo, setSelectedAlgo] = useState('Selection Sort (O(n^2))');
   const [sorting, setSorting] = useState(false);
-
+  // eslint-disable-next-line
   useEffect(() => generateColors(100), []);
 
   const generateColors = n => {

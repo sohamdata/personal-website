@@ -12,7 +12,15 @@ export default function Fun() {
 
   useEffect(() => {
     audio.volume = 0.3;
-    audio.play();
+    let playing = audio.play();
+    if (playing !== undefined) {
+      playing
+        .then(_ => {
+        })
+        .catch(error => {
+          console.log(error);
+        });
+    }
     // Pause audio when Fun page is unmounted
     return () => audio.pause();
   }, [audio]);
