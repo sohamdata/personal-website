@@ -1,5 +1,4 @@
 export default function Segment(props) {
-  // to hold page names
   const pages = ['Hi', 'Skills and Interests', 'Projects', 'Fun', 'Contact'];
 
   return (

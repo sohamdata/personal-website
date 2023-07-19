@@ -7,16 +7,16 @@ export default function Intro() {
       <p style={styles.paragraph}>
         Hey there, 👋. Thanks for visiting.
         <br />
-        <br /> I am a 19-year-old <span style={styles.empahsis}>Computer Science student and developer</span> from <span style={{ color: '#FF7B54' }}>India</span>.
+        <br /> I am a 19-year-old <span style={styles.empahsis}>Computer Science student and developer</span> from <span style={{ color: '#FF7B54' }}>India</span> currently in my pre-final year at university.
         <br />
         <br />
-        I am primarily interested in <span style={styles.empahsis}>Front-end Web Development</span>, aim to explore and deepen my understanding in various areas of technology and product development.
+        I am primarily interested in <span style={styles.empahsis}>Full-Stack Web Development</span>, aim to explore and deepen my understanding in various areas of technology and product development.
         <br />
         Currently, I am learning <span style={styles.empahsis}>backend development</span>, and exploring the world of <span style={styles.empahsis}>Cloud Computing</span>.
         <br />
-        <span style={{ color: '#FF7B54' }}>Looking for a summer 2023 internship.</span>
+        <span style={{ color: '#FF7B54' }}>Seeking a summer 2024 internship.</span>
         <br />
-        I use ReactJS, Javascript, Python, Go for my projects.
+        I use ReactJS / NextJS, Javascript / TypeScript, SQL / NoSQL databases and Python for my projects.
         Feel free to look around, or reach out through email below.
       </p>
       <br />
@@ -52,6 +52,9 @@ const styles = {
     fontSize: 18,
     padding: '21px 30px',
     borderRadius: 8,
+    hover: {
+      backgroundColor: '#ffffff',
+    },
   },
   icon: {
     marginLeft: 8,

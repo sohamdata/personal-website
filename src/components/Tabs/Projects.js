@@ -2,21 +2,30 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 // assets
-import reach from '../assets/reach.gif';
-import perlinnoise from '../assets/perlinnoise.gif';
-import notesapp from '../assets/notesapp.png';
-import facerecog from '../assets/facerecog.png';
-import golang from '../assets/toSpotify.png';
-import wordle from '../assets/wordle.png';
-import cochef from '../assets/cochef.png';
-import tictactoe from '../assets/tictactoe.png';
-import sohamdatta from '../assets/sohamdatta.png';
-import butterflyEffect from '../assets/butterflyEffect.png';
-import logindash from '../assets/logindash.gif';
+import elitecode from '../../assets/images/EliteCode.png';
+import reach from '../../assets/images/reach.gif';
+import perlinnoise from '../../assets/images/perlinnoise.gif';
+import notesapp from '../../assets/images/notesapp.png';
+import facerecog from '../../assets/images/facerecog.png';
+import golang from '../../assets/images/toSpotify.png';
+import wordle from '../../assets/images/wordle.png';
+import cochef from '../../assets/images/cochef.png';
+import tictactoe from '../../assets/images/tictactoe.png';
+import sohamdatta from '../../assets/images/sohamdatta.png';
+import butterflyEffect from '../../assets/images/butterflyEffect.png';
+import logindash from '../../assets/images/logindash.gif';
 
 export default function Projects() {
-    // items for projects
     const items = [
+        {
+            title: 'EliteCode',
+            description:
+                'A Full-stack LeetCode clone, with authentication and a interactive workspace providing an efficient problem-solving environment.',
+            image: elitecode,
+            stats: ['Next.js', 'TypeScript', 'TailwindCSS', 'ReactJS', 'Custom Hooks', 'CodeMirror'],
+            action: ['Website', 'GitHub'],
+            url: ['https://elitecode-sohamdata.vercel.app/', 'https://github.com/sohamdata/elitecode'],
+        },
         {
             title: 'Co-Chef',
             description:
@@ -31,7 +40,7 @@ export default function Projects() {
             description:
                 'A command-line tool written in Go that allows users to quickly create a Spotify playlist from songs stored locally(.mp3, .wav, .flac, etc.)',
             image: golang,
-            stats: ['go'],
+            stats: ['go', 'Spotify API', 'cli'],
             action: ['Github'],
             url: ['https://github.com/sohamdata/tospotify-go'],
         },
@@ -99,13 +108,13 @@ export default function Projects() {
             url: ['https://github.com/sohamdata/PerlinNoise', 'https://sohamdata.github.io/PerlinNoise/'],
         },
         {
-            title: 'sohamdatta.ga',
+            title: 'sohamdata.github.io/website',
             description:
-                'I made this website to teach myself and play around with HTML, CSS, JavaScript, and markdown.',
+                'One of the first websites I made, it was meant to teach myself and play around with HTML, CSS, JavaScript',
             image: sohamdatta,
             stats: ['JavaScript', 'HTML', 'CSS', 'algorithms'],
             action: ['GitHub', 'Website'],
-            url: ['https://github.com/sohamdata/website', 'https://sohamdatta.ga/'],
+            url: ['https://github.com/sohamdata/website', 'https://sohamdata.github.io/website/'],
         },
         {
             title: 'this website',

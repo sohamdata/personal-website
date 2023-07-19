@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import BinaryString from './FunItems/BinaryString';
+import BinaryString from '../FunItems/BinaryString';
 
 export default function SkillsandInterests() {
 
