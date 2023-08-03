@@ -5,7 +5,6 @@ import { faGithub, faTwitter, faLinkedin } from '@fortawesome/free-brands-svg-ic
 import { faComments } from '@fortawesome/free-solid-svg-icons'
 
 export default function Hash() {
-    const inputs = useRef({ name: "", email: "", message: "" })
 
     return (
         <div className={styles.mainContainer}>
@@ -13,13 +12,13 @@ export default function Hash() {
                 <div className={styles.contactDiv}>
                     <span>Feel free to Contact me</span>
                     <form name="contact" method="POST" data-netlify="true" className={styles.form}>
+                        <input type="hidden" name="form-name" value="contact" />
                         <div className={styles.formInput}>
                             <span id="name-label">Name</span>
                             <input
                                 name="name"
                                 type="text"
                                 placeholder="Time's 2006 person of the year"
-                                onChange={(e) => (inputs.current.name = e.target.value)}
                                 onFocus={() => { document.getElementById("name-label").style.color = "#4B56D2" }}
                                 onBlur={() => { document.getElementById("name-label").style.color = "#B6EADA" }}
                                 required
@@ -41,7 +40,6 @@ export default function Hash() {
                             <textarea
                                 name="message"
                                 placeholder="Type your message here"
-                                onChange={(e) => (inputs.current.message = e.target.value)}
                                 onFocus={() => { document.getElementById("message-label").style.color = "#4B56D2" }}
                                 onBlur={() => { document.getElementById("message-label").style.color = "#B6EADA" }}
                                 required
