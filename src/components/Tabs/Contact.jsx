@@ -12,7 +12,7 @@ export default function Hash() {
             <div className={styles.leftColumn}>
                 <div className={styles.contactDiv}>
                     <span>Feel free to Contact me</span>
-                    <form className={styles.form} name="contact" method="POST" netlify>
+                    <form className={styles.form} name="contact" method="POST" data-netlify="true">
                         <div className={styles.formInput}>
                             <span id="name-label">Name</span>
                             <input
