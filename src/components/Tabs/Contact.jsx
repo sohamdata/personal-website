@@ -12,11 +12,12 @@ export default function Hash() {
             <div className={styles.leftColumn}>
                 <div className={styles.contactDiv}>
                     <span>Feel free to Contact me</span>
-                    <form className={styles.form}>
+                    <form className={styles.form} name="contact" method="POST" netlify>
                         <div className={styles.formInput}>
                             <span id="name-label">Name</span>
                             <input
                                 name="name"
+                                type="text"
                                 placeholder="Time's 2006 person of the year"
                                 onChange={(e) => (inputs.current.name = e.target.value)}
                                 onFocus={() => { document.getElementById("name-label").style.color = "#4B56D2" }}
@@ -46,18 +47,11 @@ export default function Hash() {
                                 required
                             ></textarea>
                         </div>
-                        <input
-                            type="submit"
-                            value="Send"
-                            className={styles.formSubmit}
-                            onClick={(e) => {
-                                e.preventDefault();
-                                window.open("https://tally.so/r/3yMX9x", "_blank");
-                            }}
-                        />
+                        <button type="submit" className={styles.formSubmit}>Send</button>
                     </form>
                 </div>
             </div>
+
             <div className={styles.rightColumn}>
                 <span> My socials </span>
                 <div className={styles.sociallink}>
