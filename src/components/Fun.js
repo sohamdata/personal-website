@@ -8,9 +8,9 @@ const musicFiles = musicContext.keys().map(musicContext);
 export default function Fun() {
   const randomSongIndex = Math.floor(Math.random() * musicFiles.length);
   const audio = useMemo(() => new Audio(musicFiles[randomSongIndex]), [randomSongIndex]);
-  audio.loop = true;
 
   useEffect(() => {
+    audio.loop = true;
     audio.volume = 0.3;
     let playing = audio.play();
     if (playing !== undefined) {
@@ -21,7 +21,7 @@ export default function Fun() {
           console.log(error);
         });
     }
-    // Pause audio when Fun page is unmounted
+
     return () => audio.pause();
   }, [audio]);
 
