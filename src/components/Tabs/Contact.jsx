@@ -59,7 +59,7 @@ export default function Hash() {
                 </div>
             </div>
             <div className={styles.rightColumn}>
-                <span >My socials</span>
+                <span> My socials </span>
                 <div className={styles.sociallink}>
                     <a href="https://github.com/sohamdata" target="_blank" rel="noreferrer">
                         <FontAwesomeIcon icon={faGithub} size="2x" />

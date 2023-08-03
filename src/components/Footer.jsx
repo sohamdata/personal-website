@@ -5,7 +5,7 @@ export default function Footer() {
     return (
         <div style={styles.mainContainer}>
             ©2023 Soham Datta<br />
-            This site is WIP, thanks for visiting <h1 style={styles.link} onClick={shader}>{':)'}</h1>
+            Thanks for visiting <h1 style={styles.link} onClick={shader}>{':)'}</h1>
         </div>
     )
 }
