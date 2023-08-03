@@ -4,27 +4,20 @@ export default function Footer() {
     }
     return (
         <div style={styles.mainContainer}>
-            ©2023 Soham Datta<br />
-            Thanks for visiting <h1 style={styles.link} onClick={shader}>{':)'}</h1>
+            &copy;2023 <text style={{ cursor: 'pointer', marginLeft: '4px' }} onClick={shader}>Soham Datta</text>
         </div>
     )
 }
 
 const styles = {
     mainContainer: {
+        display: 'flex',
         width: '100%',
         height: '11vh',
-        display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#0F216B',
         color: '#B6EADA',
-        fontSize: '0.75rem',
         marginBottom: '0',
     },
-    link: {
-        cursor: 'pointer',
-        verticalAlign: 'text-bottom'
-    }
-
 }

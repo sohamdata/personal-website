@@ -1,14 +1,11 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import BinaryString from '../FunItems/BinaryString';
+import { SkillsInterests } from '../Data';
 
 export default function SkillsandInterests() {
 
-  const items = [
-    { name: 'Programming Languages', tags: ['Python', 'JavaScript', 'TypeScript', 'Node.js', 'C++', 'Java', 'SQL', 'Go'] },
-    { name: 'Tools/Frameworks', tags: ['Git', 'NextJS/ReactJS', 'NoSQL (MongoDB, Firebase)', 'Django', 'AWS', 'Node.js', 'HTML', 'CSS', 'Bootstrap', 'Tailwind CSS', 'Docker', 'Linux', 'UML diagrams'] },
-    { name: 'Hobbies', tags: ['Outdoors', 'Travel', 'Mountain biking', 'Computers', 'Guitar', 'Football', 'Video Games', 'Open Source', 'The Internet'] },
-  ];
+  const items = SkillsInterests;
 
   return (
     <div>
@@ -51,7 +48,7 @@ const styles = {
   },
   itemContainer: {
     padding: '21px 30px',
-    backgroundColor: '#f9f9f9',
+    backgroundColor: '#4E4E50',
     borderRadius: 8,
     marginTop: 26,
   },
@@ -59,10 +56,10 @@ const styles = {
     fontFamily: '-apple-system, BlinkMacSystemFont, sans-serif',
     fontWeight: 700,
     fontSize: 26,
-    color: '#000000',
+    color: '#E3E2DF',
   },
   itemBubble: {
-    backgroundColor: '#000000',
+    backgroundColor: '#1F2833',
     color: '#f9f9f9',
     padding: 8,
     margin: 6,

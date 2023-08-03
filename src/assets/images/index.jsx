@@ -1,4 +1,5 @@
 import elitecode from './EliteCode.png';
+import livesyntax from './livesyntax.png';
 import reach from './reach.gif';
 import perlinnoise from './perlinnoise.gif';
 import notesapp from './notesapp.png';
@@ -11,4 +12,4 @@ import sohamdatta from './sohamdatta.png';
 import butterflyEffect from './butterflyEffect.png';
 import logindash from './logindash.gif';
 
-export { elitecode, reach, perlinnoise, notesapp, facerecog, golang, wordle, cochef, tictactoe, sohamdatta, butterflyEffect, logindash };
+export { elitecode, livesyntax, reach, perlinnoise, notesapp, facerecog, golang, wordle, cochef, tictactoe, sohamdatta, butterflyEffect, logindash };

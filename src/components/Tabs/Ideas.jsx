@@ -2,7 +2,7 @@ export default function Ideas() {
 
   const items = [
     {
-      name: 'one use instagram',
+      name: 'one use text-chat',
       description:
         "description",
       tags: ['free plan', 'pro plan @ $100/month'],
