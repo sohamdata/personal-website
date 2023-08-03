@@ -1,19 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
-// assets
-import elitecode from '../../assets/images/EliteCode.png';
-import reach from '../../assets/images/reach.gif';
-import perlinnoise from '../../assets/images/perlinnoise.gif';
-import notesapp from '../../assets/images/notesapp.png';
-import facerecog from '../../assets/images/facerecog.png';
-import golang from '../../assets/images/toSpotify.png';
-import wordle from '../../assets/images/wordle.png';
-import cochef from '../../assets/images/cochef.png';
-import tictactoe from '../../assets/images/tictactoe.png';
-import sohamdatta from '../../assets/images/sohamdatta.png';
-import butterflyEffect from '../../assets/images/butterflyEffect.png';
-import logindash from '../../assets/images/logindash.gif';
+import { elitecode, reach, perlinnoise, notesapp, facerecog, golang, wordle, cochef, tictactoe, sohamdatta, butterflyEffect, logindash } from '../../assets/images';
 
 export default function Projects() {
     const items = [
@@ -130,8 +118,8 @@ export default function Projects() {
     return (
         <div>
             <p style={styles.paragraph}>Here are some things I made.</p>
-            {items.map((item, i) => (
-                <div style={styles.itemContainer} key={`${i}`}>
+            {items.map(item => (
+                <div style={styles.itemContainer} key={item.title}>
                     <div style={styles.imageContainer}>
                         <img src={item.image} alt={item.title} style={styles.image} />
                     </div>
@@ -139,14 +127,14 @@ export default function Projects() {
                         <header style={styles.itemHeader}>{item.title}</header>
                         <p style={styles.itemParagraph}>{item.description}</p>
                         {item.stats.map(stat => (
-                            <span key={`${Math.random()}`} style={styles.itemBubble}>
+                            <span style={styles.itemBubble} key={stat}>
                                 {stat}
                             </span>
                         ))}
                         <div style={styles.anchorContainer}>
                             {item.action.map((action, i) => (
-                                <a href={item.url[i]} style={styles.spanAnchor} target="_blank" rel="noreferrer">
-                                    <span key={i} style={styles.span}>
+                                <a href={item.url[i]} style={styles.spanAnchor} target="_blank" rel="noreferrer" key={i}>
+                                    <span style={styles.span}>
                                         {action} <FontAwesomeIcon style={styles.icon} icon={faArrowRight} />
                                     </span>
                                 </a>

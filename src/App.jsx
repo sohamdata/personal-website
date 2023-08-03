@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Segment, Intro, SkillsandInterests, Projects, Fun, Contact } from './components/Tabs/index';
-import Gradient from '../src/utils/Gradient';
+import Gradient from './utils/Gradient';
 import Footer from './components/Footer';
 
 function App() {

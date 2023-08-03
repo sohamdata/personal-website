@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import CryptoJS from 'crypto-js';
-import styles from './styles';
+import styles from './styles.jsx';
 
 function reversePairHash(inputString) {
   let reversedString = '';

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import styles from './styles';
+import styles from './styles.jsx';
 
 export default function Sort() {
   const [colors, setColors] = useState([]);
