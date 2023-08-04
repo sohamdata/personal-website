@@ -1,7 +1,7 @@
 import styles from './Contact.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faTwitter, faLinkedin } from '@fortawesome/free-brands-svg-icons'
-import { faComments } from '@fortawesome/free-solid-svg-icons'
+import { ReactComponent as LeetCode } from '../../assets/images/leetcode.svg'
 
 export default function Contact() {
     return (
@@ -44,7 +44,7 @@ export default function Contact() {
             </div>
 
             <div className={styles.rightColumn}>
-                <span> My socials </span>
+                <span style={{ marginBottom: "20px" }}> Find me on </span>
                 <div className={styles.sociallink}>
                     <a href="https://github.com/sohamdata" target="_blank" rel="noreferrer">
                         <FontAwesomeIcon icon={faGithub} size="2x" />
@@ -55,18 +55,17 @@ export default function Contact() {
                         <FontAwesomeIcon icon={faLinkedin} size="2x" />
                     </a>
                 </div>
+                <div className={styles.sociallink} style={{ width: '40px', height: '40px', alignSelf: 'center' }}>
+                    <a href="https://leetcode.com/ssohamm/" target="_blank" rel="noreferrer" >
+                        <LeetCode />
+                    </a>
+                </div>
                 <div className={styles.sociallink}>
                     <a href="https://twitter.com/sohamdata" target="_blank" rel="noreferrer">
                         <FontAwesomeIcon icon={faTwitter} size="2x" />
                     </a>
                 </div>
-                <div className={styles.sociallink}>
-                    <a href="https://tally.so/r/3yMX9x" target="_blank" rel="noreferrer">
-                        <FontAwesomeIcon icon={faComments} size="2x" />
-                    </a>
-                    <h3 style={{ fontSize: "0.5rem", color: "#B6EADA" }}>(Temporary contact form)</h3>
-                </div>
             </div>
-        </div>
+        </div >
     );
 }

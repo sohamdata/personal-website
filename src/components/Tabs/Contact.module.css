@@ -9,6 +9,8 @@
 }
 
 .rightColumn {
+    display: flex;
+    flex-direction: column;
     grid-column: 2 / 2;
 }
 
@@ -21,6 +23,10 @@
     font-size: 1.1rem;
     color: #B6EADA;
     text-decoration: none;
+}
+
+svg:hover path {
+    fill: #4B56D2;
 }
 
 .sociallink a:hover {

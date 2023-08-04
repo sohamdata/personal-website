@@ -1,6 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import BinaryString from '../FunItems/BinaryString';
 import { SkillsInterests } from '../Data';
 
 export default function SkillsandInterests() {
@@ -9,12 +8,12 @@ export default function SkillsandInterests() {
 
   return (
     <div>
-      {items.map((item, i) => (
-        <div style={styles.itemContainer} key={`${i}`}>
+      {items.map(item => (
+        <div style={styles.itemContainer} key={item.name}>
           <header style={styles.itemHeader}>{item.name}</header>
           <br />
           {item.tags.map(tag => (
-            <span key={`${Math.random()}`} style={styles.itemBubble}>
+            <span key={tag} style={styles.itemBubble}>
               {tag}
             </span>
           ))}
@@ -34,8 +33,6 @@ export default function SkillsandInterests() {
           </span>
         </a>
       </div>
-      <br /> <br />
-      <BinaryString />
     </div>
   );
 }
