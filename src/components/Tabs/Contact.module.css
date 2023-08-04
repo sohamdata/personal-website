@@ -1,14 +1,15 @@
 .mainContainer {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 20px;
+    grid-template-columns: 2fr 1fr;
 }
 
 .leftColumn {
+    /* background-color: #301E67; */
     grid-column: 1 / 2;
 }
 
 .rightColumn {
+    /* background-color: #5C5C5C; */
     display: flex;
     flex-direction: column;
     grid-column: 2 / 2;
@@ -46,11 +47,12 @@ svg:hover path {
 }
 
 .form {
+    margin-left: 32px;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 32px;
-    width: 100%;
+    width: 80%;
     color: #B6EADA;
 }
 
@@ -78,7 +80,7 @@ svg:hover path {
 
 .formInput>textarea {
     height: 100px;
-    resize: none;
+    resize: vertical;
 }
 
 .formSubmit {
