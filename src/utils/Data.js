@@ -152,6 +152,7 @@ const Backgrounds = [
 const Music = [
     'closer2.aac',
     'peaked.aac',
+    'tomtom.aac',
 ];
 
 export { ProjectData, SkillsInterests, Ideas, Backgrounds, Music };
