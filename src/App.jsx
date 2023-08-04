@@ -1,10 +1,10 @@
-import { useState } from 'react';
-import { Segment, Intro, SkillsandInterests, Projects, Fun, Contact } from './components/Tabs/index';
+import { Segment, Intro, SkillsandInterests, Projects, Fun, Contact } from './components/Tabs';
 import Gradient from './utils/Gradient';
 import Footer from './components/Footer';
+import useLocalStorage from './utils/useLocalStorage';
 
 function App() {
-  const [currentPage, setCurrentPage] = useState('Hi');
+  const [currentPage, setCurrentPage] = useLocalStorage('currentPage', 'Hi');
 
   const pages = {
     Hi: <Intro />,

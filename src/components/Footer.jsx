@@ -4,7 +4,7 @@ export default function Footer() {
     }
     return (
         <div style={styles.mainContainer}>
-            &copy;2023 <text style={{ cursor: 'pointer', marginLeft: '4px' }} onClick={shader}>Soham Datta</text>
+            &copy;2023 <span style={{ cursor: 'pointer', marginLeft: '4px' }} onClick={shader}>Soham Datta</span>
         </div>
     )
 }
