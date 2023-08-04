@@ -1,15 +1,11 @@
 import React, { useEffect, useMemo } from 'react';
 import { Hash, Sort, BinaryString } from './FunItems';
 import Background from './Background';
-
-const songs = [
-  'closer2.aac',
-  'peaked.aac',
-];
+import { Music } from '../utils/Data';
 
 export default function Fun() {
-  const randomSongIndex = Math.floor(Math.random() * songs.length);
-  const audio = useMemo(() => new Audio(`../../src/assets/music/${songs[randomSongIndex]}`), [randomSongIndex]);
+  const randomSongIndex = Math.floor(Math.random() * Music.length);
+  const audio = useMemo(() => new Audio(`/music/${Music[randomSongIndex]}`), [randomSongIndex]);
 
   useEffect(() => {
     let playing = audio.play();

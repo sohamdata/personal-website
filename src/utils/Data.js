@@ -149,5 +149,9 @@ const Backgrounds = [
     'https://glslsandbox.com/e#99536.6',
 ];
 
+const Music = [
+    'closer2.aac',
+    'peaked.aac',
+];
 
-export { ProjectData, SkillsInterests, Ideas, Backgrounds };
+export { ProjectData, SkillsInterests, Ideas, Backgrounds, Music };
