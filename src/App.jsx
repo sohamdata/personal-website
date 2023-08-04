@@ -18,18 +18,15 @@ function App() {
     <div>
       <div style={styles.app}>
         <header style={{ ...styles.h1, fontSize: window.innerWidth > 450 ? 60 : 30 }}>
-          <Gradient dir="left-to-right" from="#0064f2" to="#7400c5">
-            Soham{' '}
+          <Gradient dir="left-to-right" from="#614385" to="#516395">
+            Soham {" "}
           </Gradient>
-          <Gradient dir="left-to-right" from="#7400c5" to="#ff0074">
+          <Gradient dir="left-to-right" from="#516395" to="#34E89E">
             Datta
           </Gradient>
         </header>
         <Segment setCurrentPage={setCurrentPage} currentPage={currentPage} />
         {pages[currentPage]}
-        <br />
-        <br />
-        <br />
       </div>
       <div style={styles.footer}>
         <Footer />

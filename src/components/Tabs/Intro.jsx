@@ -1,6 +1,3 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
-
 export default function Intro() {
   return (
     <div>
@@ -11,22 +8,11 @@ export default function Intro() {
         <br /> <br />
         I am primarily interested in <span style={styles.empahsis}>Full-Stack Web Development</span>, aim to explore and deepen my understanding in various areas of technology and product development.
         <br />
-        Currently, I am learning <span style={styles.empahsis}>backend development</span>, and exploring the world of <span style={styles.empahsis}>Cloud Computing</span>.
-        <br />
-        <span style={{ color: '#FF7B54' }}>Seeking a summer 2024 internship.</span>
+        <span style={{ color: '#FF7B54' }}>Open to work, seeking a summer 2024 internship.</span>
         <br /> <br />
-        I use ReactJS / NextJS, Javascript / TypeScript, SQL / NoSQL databases and Python for my projects.
-        Feel free to look around, or reach out through email below.
+        I use ReactJS/NextJS, NodeJS, JavaScript/TypeScript, SQL/NoSQL databases and Python for my projects. I am open to other technologies as well.<br />
+        Feel free to look around, or reach out through the contact tab.
       </p>
-      <br />
-      <br />
-      <div style={styles.anchorContainer}>
-        <a href="mailto:sohamdatta34@gmail.com" style={styles.spanAnchor}>
-          <span style={{ ...styles.span }}>
-            Say hello <FontAwesomeIcon style={styles.icon} icon={faArrowRight} />
-          </span>
-        </a>
-      </div>
     </div >
   );
 }

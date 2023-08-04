@@ -11,6 +11,8 @@ export default function Footer() {
 
 const styles = {
     mainContainer: {
+        marginTop: '3em',
+        marginBottom: '0',
         display: 'flex',
         width: '100%',
         height: '11vh',
@@ -18,6 +20,5 @@ const styles = {
         alignItems: 'center',
         backgroundColor: '#0F216B',
         color: '#B6EADA',
-        marginBottom: '0',
     },
 }

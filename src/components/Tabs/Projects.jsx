@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import { ProjectData } from '../Data';
+import { ProjectData } from "../../utils/Data"
 
 export default function Projects() {
     const items = ProjectData;

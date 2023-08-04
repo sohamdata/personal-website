@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import { SkillsInterests } from '../Data';
+import { SkillsInterests } from "../../utils/Data"
 
 export default function SkillsandInterests() {
 

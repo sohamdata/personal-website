@@ -1,19 +1,8 @@
+import { Ideas } from "../../utils/Data";
+
 export default function Ideas() {
 
-  const items = [
-    {
-      name: 'one use text-chat',
-      description:
-        "description",
-      tags: ['free plan', 'pro plan @ $100/month'],
-    },
-    {
-      name: 'downloadable internet',
-      description:
-        'description',
-      tags: ['internet', 'offline'],
-    },
-  ];
+  const items = Ideas;
 
   return (
     <div>

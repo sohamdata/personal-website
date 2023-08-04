@@ -1,17 +1,17 @@
-export default function Segment(props) {
+export default function Segment({ setCurrentPage, currentPage }) {
   const pages = ['Hi', 'Skills and Interests', 'Projects', 'Fun', 'Contact'];
 
   return (
     <div style={styles.container}>
-      {pages.map((page, i) => (
+      {pages.map(page => (
         <div
-          key={`${i}`}
+          key={page}
           onClick={() => {
-            props.setCurrentPage(page.replace(/\s/g, ""));
+            setCurrentPage(page.replace(/\s/g, ""));
           }}
           style={{
             ...styles.block,
-            ...(page.replace(/\s/g, "") === props.currentPage
+            ...(page.replace(/\s/g, "") === currentPage
               ? { backgroundColor: '#000000', color: '#4B56D2' }
               : { backgroundColor: '#4B56D2', color: '#000000' }),
           }}

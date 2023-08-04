@@ -16,7 +16,7 @@ const ProjectData = [
             'A code editor that allows multiple users to edit the same code in real-time.',
         image: livesyntax,
         stats: ['ReactJS', 'TypeScript', 'TailwindCSS', 'CodeMirror', 'Socket.io', 'Express.js'],
-        action: ['Website', 'GitHub', 'wake up server'],
+        action: ['Website', 'GitHub', 'Wake up server'],
         url: ['https://livesyntax.vercel.app/', 'https://github.com/sohamdata/LiveSyntax/', 'https://livesyntax-server.glitch.me/wakeup'],
     },
     {
@@ -126,4 +126,19 @@ const SkillsInterests = [
     { name: 'Hobbies', tags: ['Outdoors', 'Travel', 'Mountain biking', 'Computers', 'Guitar', 'Football', 'Video Games', 'Open Source', 'The Internet'] },
 ];
 
-export { ProjectData, SkillsInterests };
+const Ideas = [
+    {
+        name: 'one use text-chat',
+        description:
+            "description",
+        tags: ['free plan', 'pro plan @ $100/month'],
+    },
+    {
+        name: 'downloadable internet',
+        description:
+            'description',
+        tags: ['internet', 'offline'],
+    },
+];
+
+export { ProjectData, SkillsInterests, Ideas };
