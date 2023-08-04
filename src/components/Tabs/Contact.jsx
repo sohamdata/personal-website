@@ -9,7 +9,7 @@ export default function Contact() {
             <div className={styles.leftColumn}>
                 <div className={styles.contactDiv}>
                     <span>Feel free to Contact me</span>
-                    <form name="contact" method="POST" netlify className={styles.form}>
+                    <form name="contact" method="POST" data-netlify="true" className={styles.form}>
                         <input type="hidden" name="form-name" value="contact" />
 
                         <div className={styles.formInput}>
