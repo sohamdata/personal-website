@@ -3,23 +3,21 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faTwitter, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import { faComments } from '@fortawesome/free-solid-svg-icons'
 
-export default function Hash() {
-
+export default function Contact() {
     return (
         <div className={styles.mainContainer}>
             <div className={styles.leftColumn}>
                 <div className={styles.contactDiv}>
                     <span>Feel free to Contact me</span>
-                    <form name="contact" method="POST" data-netlify="true" className={styles.form}>
+                    <form name="contact" method="POST" netlify className={styles.form}>
                         <input type="hidden" name="form-name" value="contact" />
+
                         <div className={styles.formInput}>
                             <span id="name-label">Name</span>
                             <input
                                 name="name"
                                 type="text"
                                 placeholder="Time's 2006 person of the year"
-                                onFocus={() => { document.getElementById("name-label").style.color = "#4B56D2" }}
-                                onBlur={() => { document.getElementById("name-label").style.color = "#B6EADA" }}
                                 required
                             />
                         </div>
@@ -29,8 +27,6 @@ export default function Hash() {
                                 name="email"
                                 type="email"
                                 placeholder="email@example.com"
-                                onFocus={() => { document.getElementById("email-label").style.color = "#4B56D2" }}
-                                onBlur={() => { document.getElementById("email-label").style.color = "#B6EADA" }}
                                 required
                             />
                         </div>
@@ -39,8 +35,6 @@ export default function Hash() {
                             <textarea
                                 name="message"
                                 placeholder="Type your message here"
-                                onFocus={() => { document.getElementById("message-label").style.color = "#4B56D2" }}
-                                onBlur={() => { document.getElementById("message-label").style.color = "#B6EADA" }}
                                 required
                             ></textarea>
                         </div>

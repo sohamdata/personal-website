@@ -46,7 +46,6 @@
     gap: 32px;
     width: 100%;
     color: #B6EADA;
-    --input-bg: #ffffff;
 }
 
 .formInput {
@@ -58,8 +57,6 @@
 
 .formInput>span {
     text-align: left;
-    margin: 12px 0;
-    font-size: 1.1rem;
 }
 
 .formInput>input,
@@ -74,7 +71,7 @@
 }
 
 .formInput>textarea {
-    height: 200px;
+    height: 100px;
     resize: none;
 }
 
