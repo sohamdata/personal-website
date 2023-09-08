@@ -20,15 +20,6 @@ const ProjectData = [
         url: ['https://livesyntax.vercel.app/', 'https://github.com/sohamdata/LiveSyntax/', 'https://livesyntax-server.glitch.me/wakeup'],
     },
     {
-        title: 'Co-Chef',
-        description:
-            'Find the recipes of tens of thousands of dishes!',
-        image: cochef,
-        stats: ['ReactJS', 'Edamam API', 'JavaScript'],
-        action: ['Website', 'GitHub'],
-        url: ['https://recipes-app-reactjs.web.app/', 'https://github.com/sohamdata/Co-Chef'],
-    },
-    {
         title: 'toSpotify',
         description:
             'A command-line tool written in Go that allows users to quickly create a Spotify playlist from songs stored locally(.mp3, .wav, .flac, etc.)',
@@ -36,6 +27,15 @@ const ProjectData = [
         stats: ['go', 'Spotify API', 'cli'],
         action: ['Github'],
         url: ['https://github.com/sohamdata/tospotify-go'],
+    },
+    {
+        title: 'Co-Chef',
+        description:
+            'Find the recipes of tens of thousands of dishes!',
+        image: cochef,
+        stats: ['ReactJS', 'Edamam API', 'JavaScript'],
+        action: ['Website', 'GitHub'],
+        url: ['https://recipes-app-reactjs.web.app/', 'https://github.com/sohamdata/Co-Chef'],
     },
     {
         title: 'Notes App',
@@ -54,6 +54,15 @@ const ProjectData = [
         stats: ['python', 'wordle', 'oop'],
         action: ['Github'],
         url: ['https://github.com/sohamdata/wordlul'],
+    },
+    {
+        title: 'MiniMax Algorithm Tic-Tac-Toe',
+        description:
+            'Tic Tac Toe using the Min-Max Algorithm',
+        image: tictactoe,
+        stats: ['JavaScript', 'algorithms', 'minimax', 'HTML', 'CSS'],
+        action: ['GitHub', 'Website'],
+        url: ['https://github.com/sohamdata/tic-tac-toe-minmax', 'https://tic-tac-toe-mini-max.netlify.app/'],
     },
     {
         title: 'Login Dashboard',
@@ -81,15 +90,6 @@ const ProjectData = [
         stats: ['C#', 'ASP.NET Core', 'Entity Framework Core', 'SQL Server', 'REST API'],
         action: ['GitHub'],
         url: ['https://github.com/sohamdata/commanderRESTAPI'],
-    },
-    {
-        title: 'MiniMax Algorithm Tic-Tac-Toe',
-        description:
-            'Tic Tac Toe using the Min-Max Algorithm',
-        image: tictactoe,
-        stats: ['JavaScript', 'algorithms', 'minimax', 'HTML', 'CSS'],
-        action: ['GitHub', 'Website'],
-        url: ['https://github.com/sohamdata/tic-tac-toe-minmax', 'https://tic-tac-toe-mini-max.netlify.app/'],
     },
     {
         title: 'perlin noise',
