@@ -4,13 +4,13 @@ export default function Intro() {
       <p style={styles.paragraph}>
         Hey there, 👋. Thanks for visiting.
         <br /> <br />
-        I am a 19-year-old <span style={styles.empahsis}>Computer Science student and developer</span> from <span style={{ color: '#FF7B54' }}>India</span> currently in my pre-final year at university.
+        I am a <span style={styles.empahsis}>Computer Science student and developer</span> from <span style={{ color: '#FF7B54' }}>India</span> currently in my pre-final year at university.
         <br /> <br />
-        I am primarily interested in <span style={styles.empahsis}>Full-Stack Web Development</span>, aim to explore and deepen my understanding in various areas of technology and product development.
-        <br />
+        My primary focus lies in <span style={styles.empahsis}>Full-Stack Web Development</span>, and I'm dedicated to expanding my knowledge across various domains within technology and product development.
+        <br /> <br />
         <span style={{ color: '#FF7B54' }}>Open to work, seeking a summer 2024 internship.</span>
         <br /> <br />
-        I use ReactJS/NextJS, NodeJS, JavaScript/TypeScript, SQL/NoSQL databases and Python for my projects. I am open to other technologies as well.<br />
+        I use <span style={styles.empahsis}>React.js/Next.js, Node.js, JavaScript/TypeScript, SQL/NoSQL databases and Python</span> for my projects. I'm always open to exploring and incorporating other technologies into my work.<br />
         Feel free to look around, or reach out through the contact tab.
       </p>
     </div >
