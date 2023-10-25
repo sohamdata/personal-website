@@ -11,5 +11,6 @@ import tictactoe from './tictactoe.png';
 import sohamdatta from './sohamdatta.png';
 import butterflyEffect from './butterflyEffect.png';
 import logindash from './logindash.gif';
+import criticai from './criticai.png'
 
-export { elitecode, livesyntax, reach, perlinnoise, notesapp, facerecog, golang, wordle, cochef, tictactoe, sohamdatta, butterflyEffect, logindash };
+export { elitecode, livesyntax, reach, perlinnoise, notesapp, facerecog, golang, wordle, cochef, tictactoe, sohamdatta, butterflyEffect, logindash, criticai };

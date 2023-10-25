@@ -1,4 +1,4 @@
-import { elitecode, livesyntax, reach, perlinnoise, notesapp, facerecog, golang, wordle, cochef, tictactoe, sohamdatta, butterflyEffect, logindash } from '../assets/images';
+import { elitecode, livesyntax, reach, perlinnoise, notesapp, facerecog, golang, wordle, cochef, tictactoe, sohamdatta, butterflyEffect, logindash, criticai } from '../assets/images';
 
 const ProjectData = [
     {
@@ -6,7 +6,7 @@ const ProjectData = [
         description:
             'A Full-stack LeetCode clone, with authentication and a interactive workspace providing an efficient problem-solving environment.',
         image: elitecode,
-        stats: ['Next.js', 'TypeScript', 'TailwindCSS', 'ReactJS', 'Custom Hooks', 'CodeMirror'],
+        stats: ['Next.js', 'TypeScript', 'TailwindCSS', 'React.js', 'Custom Hooks', 'CodeMirror'],
         action: ['Website', 'GitHub'],
         url: ['https://elitecode-sohamdata.vercel.app/', 'https://github.com/sohamdata/elitecode'],
     },
@@ -15,9 +15,18 @@ const ProjectData = [
         description:
             'A code editor that allows multiple users to edit the same code in real-time.',
         image: livesyntax,
-        stats: ['ReactJS', 'TypeScript', 'TailwindCSS', 'CodeMirror', 'Socket.io', 'Express.js'],
+        stats: ['React.js', 'TypeScript', 'TailwindCSS', 'CodeMirror', 'Socket.io', 'Express.js'],
         action: ['Website', 'GitHub', 'Wake up server'],
         url: ['https://livesyntax.vercel.app/', 'https://github.com/sohamdata/LiveSyntax/', 'https://livesyntax-server.glitch.me/wakeup'],
+    },
+    {
+        title: 'Critic.ai [ WIP ]',
+        description:
+            'Creating a game review engine employing sentiment analysis to aggregate critic reviews from diverse websites, resulting in a consolidated rating on a scale of 1-10. Currently working on generating reviews using LLMs.',
+        image: criticai,
+        stats: ['React.js', 'TypeScript', 'TailwindCSS', 'Socket.io', 'LlamaIndex', 'Large Language Models'],
+        action: ['Demo', 'GitHub'],
+        url: ['https://www.youtube.com/watch?v=SwoieYRK0uM', 'https://github.com/critic-ai'],
     },
     {
         title: 'toSpotify',
@@ -33,18 +42,9 @@ const ProjectData = [
         description:
             'Find the recipes of tens of thousands of dishes!',
         image: cochef,
-        stats: ['ReactJS', 'Edamam API', 'JavaScript'],
+        stats: ['React.js', 'Edamam API', 'JavaScript'],
         action: ['Website', 'GitHub'],
-        url: ['https://recipes-app-reactjs.web.app/', 'https://github.com/sohamdata/Co-Chef'],
-    },
-    {
-        title: 'Notes App',
-        description:
-            'Fullstack React app for taking notes with auth using GraphQL and AWS platform.',
-        image: notesapp,
-        stats: ['ReactJS', 'JavaScript', 'graphql', 'aws'],
-        action: ['GitHub', 'Demo'],
-        url: ['https://github.com/sohamdata/aws-sem3-project', 'https://user-images.githubusercontent.com/78294692/206841659-06aa6627-f2b6-4636-8492-3a3f725acc03.gif'],
+        url: ['https://recipes-app-React.js.web.app/', 'https://github.com/sohamdata/Co-Chef'],
     },
     {
         title: 'wordle helper',
@@ -65,11 +65,20 @@ const ProjectData = [
         url: ['https://github.com/sohamdata/tic-tac-toe-minmax', 'https://tic-tac-toe-mini-max.netlify.app/'],
     },
     {
+        title: 'Notes App',
+        description:
+            'Fullstack React app for taking notes with auth using GraphQL and AWS platform.',
+        image: notesapp,
+        stats: ['React.js', 'JavaScript', 'graphql', 'aws'],
+        action: ['GitHub', 'Demo'],
+        url: ['https://github.com/sohamdata/aws-sem3-project', 'https://user-images.githubusercontent.com/78294692/206841659-06aa6627-f2b6-4636-8492-3a3f725acc03.gif'],
+    },
+    {
         title: 'Login Dashboard',
         description:
-            'A login dashboard with field validation and user authentication local storage using ReactJS, made to practice React Hooks.',
+            'A login dashboard with field validation and user authentication local storage using React.js, made to practice React Hooks.',
         image: logindash,
-        stats: ['ReactJS'],
+        stats: ['React.js'],
         action: ['GitHub', 'Live'],
         url: ['https://github.com/sohamdata/react-login-dashboard', 'https://login-dash.netlify.app/'],
     },
@@ -114,7 +123,7 @@ const ProjectData = [
         description:
             'If you want to help in improving this website, create a pull request on my GitHub repository.',
         image: butterflyEffect,
-        stats: ['ReactJS'],
+        stats: ['React.js'],
         action: ['GitHub', 'Feedback'],
         url: ['https://github.com/sohamdata/personal-website', 'https://tally.so/r/3yMX9x'],
     },
@@ -122,7 +131,7 @@ const ProjectData = [
 
 const SkillsInterests = [
     { name: 'Programming Languages', tags: ['Python', 'JavaScript', 'TypeScript', 'Node.js', 'C++', 'Java', 'SQL', 'Go'] },
-    { name: 'Tools/Frameworks', tags: ['Git', 'NextJS/ReactJS', 'NoSQL (MongoDB, Firebase)', 'Django', 'AWS', 'Node.js', 'HTML', 'CSS', 'Bootstrap', 'Tailwind CSS', 'Docker', 'Linux', 'UML diagrams'] },
+    { name: 'Tools/Frameworks', tags: ['Git', 'NextJS/React.js', 'NoSQL (MongoDB, Firebase)', 'Django', 'AWS', 'Node.js', 'HTML', 'CSS', 'Bootstrap', 'Tailwind CSS', 'Docker', 'Linux', 'UML diagrams'] },
     { name: 'Hobbies', tags: ['Outdoors', 'Travel', 'Mountain biking', 'Computers', 'Guitar', 'Football', 'Video Games', 'Open Source', 'The Internet'] },
 ];
 
