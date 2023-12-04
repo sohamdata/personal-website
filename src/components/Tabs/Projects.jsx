@@ -1,5 +1,3 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { ProjectData } from "../../utils/Data"
 
 export default function Projects() {
@@ -27,7 +25,7 @@ export default function Projects() {
                             {item.action.map((action, i) => (
                                 <a href={item.url[i]} style={styles.spanAnchor} target="_blank" rel="noreferrer" key={i}>
                                     <span style={styles.span}>
-                                        {action} <FontAwesomeIcon style={styles.icon} icon={faArrowRight} />
+                                        {action}
                                     </span>
                                 </a>
                             ))}
@@ -59,6 +57,7 @@ const styles = {
     },
     image: {
         width: '100%',
+        height: 'auto',
     },
     textContainer: {
         width: '100%',
@@ -91,6 +90,7 @@ const styles = {
     },
     anchorContainer: {
         display: 'flex',
+        flexWrap: 'wrap',
         alignItems: 'center',
         justifyContent: 'center',
         marginTop: 30,
@@ -107,6 +107,7 @@ const styles = {
         padding: '12px 16px',
         margin: '8px',
         borderRadius: 50,
+        display: 'inline-block',
     },
     icon: {
         marginLeft: 7,
