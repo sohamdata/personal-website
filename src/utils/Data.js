@@ -26,7 +26,7 @@ const ProjectData = [
         image: criticai,
         stats: ['React.js', 'TypeScript', 'TailwindCSS', 'Socket.io', 'LlamaIndex', 'Large Language Models'],
         action: ['Demo', 'GitHub'],
-        url: ['https://www.youtube.com/watch?v=SwoieYRK0uM', 'https://github.com/critic-ai'],
+        url: ['https://www.youtube.com/watch?v=j67vs5kmeQA', 'https://github.com/critic-ai'],
     },
     {
         title: 'toSpotify',
@@ -110,13 +110,13 @@ const ProjectData = [
         url: ['https://github.com/sohamdata/PerlinNoise', 'https://sohamdata.github.io/PerlinNoise/'],
     },
     {
-        title: 'sohamdata.github.io/website',
+        title: 'sohamisa.live',
         description:
             'One of the first websites I made, it was meant to teach myself and play around with HTML, CSS, JavaScript',
         image: sohamdatta,
         stats: ['JavaScript', 'HTML', 'CSS', 'algorithms'],
         action: ['GitHub', 'Website'],
-        url: ['https://github.com/sohamdata/website', 'https://sohamdata.github.io/website/'],
+        url: ['https://github.com/sohamdata/website', 'https://sohamisa.live/'],
     },
     {
         title: 'this website',
@@ -132,7 +132,7 @@ const ProjectData = [
 const SkillsInterests = [
     { name: 'Programming Languages', tags: ['Python', 'JavaScript', 'TypeScript', 'Node.js', 'C++', 'Java', 'SQL', 'Go'] },
     { name: 'Tools/Frameworks', tags: ['Git', 'NextJS/React.js', 'NoSQL (MongoDB, Firebase)', 'Django', 'AWS', 'Node.js', 'HTML', 'CSS', 'Bootstrap', 'Tailwind CSS', 'Docker', 'Linux', 'UML diagrams'] },
-    { name: 'Hobbies', tags: ['Outdoors', 'Travel', 'Mountain biking', 'Computers', 'Guitar', 'Football', 'Video Games', 'Open Source', 'The Internet'] },
+    { name: 'Hobbies', tags: ['Outdoors', 'Travel', 'Mountain biking', 'Computers', 'Guitar', 'Football', 'Video Games', 'LLMS', 'Open Source', 'The Internet'] },
 ];
 
 const Ideas = [
@@ -151,6 +151,7 @@ const Ideas = [
 ];
 
 const Backgrounds = [
+    'https://glslsandbox.com/e#108297.0',
     'https://glslsandbox.com/e#99603.8',
     'https://mrdoob.com/projects/chromeexperiments/google-space/',
     'https://glslsandbox.com/e#99596.0',
@@ -160,7 +161,11 @@ const Backgrounds = [
 
 const Music = [
     'closer2.aac',
+    'ego.aac',
+    'icarus.aac',
     'peaked.aac',
+    'scifi.aac',
+    'startend.aac',
     'tomtom.aac',
 ];
 

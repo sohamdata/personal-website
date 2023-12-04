@@ -4,11 +4,22 @@ import Background from './Background';
 import { Music } from '../utils/Data';
 
 export default function Fun() {
-  const randomSongIndex = Math.floor(Math.random() * Music.length);
-  const audio = useMemo(() => new Audio(`/music/${Music[randomSongIndex]}`), [randomSongIndex]);
+
+  let randomIndex = localStorage.getItem('audioIndex');
+
+  if (randomIndex === null) {
+    randomIndex = Math.floor(Math.random() * Music.length);
+    localStorage.setItem('audioIndex', randomIndex);
+  } else {
+    randomIndex = (parseInt(randomIndex) + 1) % Music.length;
+    localStorage.setItem('audioIndex', randomIndex);
+  }
+
+  const selectedSong = Music[randomIndex];
+  const audio = new Audio(`/music/${selectedSong}`);
 
   useEffect(() => {
-    let playing = audio.play();
+    var playing = audio.play();
 
     if (playing !== undefined) {
       playing.then(_ => {
@@ -21,7 +32,7 @@ export default function Fun() {
     }
 
     return () => audio.pause();
-  }, [audio]);
+  }, []);
 
   return (
     <div>
