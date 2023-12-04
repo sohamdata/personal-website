@@ -1,22 +1,28 @@
 export default function Segment({ setCurrentPage, currentPage }) {
-  const pages = ['Hi', 'Skills and Interests', 'Projects', 'Fun', 'Contact'];
+  const pages = [
+    { 'Hi': 'Hi' },
+    { 'Skills': 'SkillsandInterests' },
+    { 'Projects': 'Projects' },
+    { 'Fun': 'Fun' },
+    { 'Contact': 'Contact' }
+  ];
 
   return (
     <div style={styles.container}>
       {pages.map(page => (
         <div
-          key={page}
+          key={Object.keys(page)[0]}
           onClick={() => {
-            setCurrentPage(page.replace(/\s/g, ""));
+            setCurrentPage(Object.values(page)[0]);
           }}
           style={{
             ...styles.block,
-            ...(page.replace(/\s/g, "") === currentPage
+            ...(Object.values(page)[0] === currentPage
               ? { backgroundColor: '#000000', color: '#4B56D2' }
               : { backgroundColor: '#4B56D2', color: '#000000' }),
           }}
         >
-          {page}
+          {Object.keys(page)[0]}
         </div>
       ))}
     </div>
