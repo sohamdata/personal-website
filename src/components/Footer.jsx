@@ -1,10 +1,10 @@
 export default function Footer() {
     const shader = () => {
-        window.open("https://sohamdata.github.io/website/", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=400,height=400");
+        window.open("https://www.sohamisa.live/", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=400,height=400");
     }
     return (
         <div style={styles.mainContainer}>
-            &copy;2023 <span style={{ cursor: 'pointer', marginLeft: '4px' }} onClick={shader}>Soham Datta</span>
+            &copy;2024 <span style={{ cursor: 'pointer', marginLeft: '4px' }} onClick={shader}>Soham Datta</span>
         </div>
     )
 }

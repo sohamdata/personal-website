@@ -15,7 +15,7 @@ function App() {
   };
 
   return (
-    <div>
+    <div style={styles.container}>
       <div style={styles.app}>
         <header style={{ ...styles.h1, fontSize: window.innerWidth > 450 ? 60 : 30 }}>
           <Gradient dir="left-to-right" from="#614385" to="#516395">
@@ -26,31 +26,40 @@ function App() {
           </Gradient>
         </header>
         <Segment setCurrentPage={setCurrentPage} currentPage={currentPage} />
-        {pages[currentPage]}
+        <div style={styles.pageContent}>
+          {pages[currentPage]}
+        </div>
       </div>
-      <div style={styles.footer}>
-        <Footer />
-      </div>
+      <Footer />
     </div>
   );
 }
 
 const styles = {
+  container: {
+    display: 'flex',
+    flexDirection: 'column',
+    minHeight: '100vh',
+  },
   app: {
     textAlign: 'center',
     padding: 12,
     maxWidth: 700,
     margin: 'auto',
-  },
-  footer: {
-    maxWidth: '100%',
-    paddingBottom: 0,
+    flex: '1 0 auto',
   },
   h1: {
     fontFamily: '-apple-system, BlinkMacSystemFont, sans-serif',
     fontWeight: 700,
     fontSize: 30,
     color: '#0F216B',
+  },
+  pageContent: {
+    flex: '1 0 auto',
+  },
+  footer: {
+    width: '100%',
+    flexShrink: 0,
   },
 };
 

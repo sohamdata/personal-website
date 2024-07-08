@@ -1,7 +1,7 @@
-import React, { useEffect, useMemo } from 'react';
-import { Hash, Sort, BinaryString } from './FunItems';
-import Background from './Background';
+import React, { useEffect } from 'react';
 import { Music } from '../utils/Data';
+import Background from './Background';
+import { BinaryString, Hash, Sort } from './FunItems';
 
 export default function Fun() {
 
