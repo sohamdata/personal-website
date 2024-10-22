@@ -1,21 +1,41 @@
 import {
+  butterflyEffect,
+  cochef,
+  criticai,
   elitecode,
-  livesyntax,
-  reach,
-  perlinnoise,
-  notesapp,
   facerecog,
   golang,
-  wordle,
-  cochef,
-  tictactoe,
+  livesyntax,
+  notesapp,
+  perlinnoise,
+  reach,
   sohamdatta,
-  butterflyEffect,
-  logindash,
-  criticai,
+  tictactoe,
+  wordle,
 } from "../assets/images";
 
 const ProjectData = [
+  {
+    title: "Critic.ai",
+    description:
+      "Created a game review engine that utilizes Large Language Models and Retrieval Augmented Generation to generate aggregated textual Game reviews.",
+    image: criticai,
+    stats: [
+      "React.js",
+      "TypeScript",
+      "TailwindCSS",
+      "Socket.io",
+      "LlamaIndex",
+      "Large Language Models",
+      "MongoDB",
+      "VectorDB",
+    ],
+    action: ["Demo", "GitHub"],
+    url: [
+      "https://www.youtube.com/watch?v=j67vs5kmeQA",
+      "https://github.com/critic-ai",
+    ],
+  },
   {
     title: "EliteCode",
     description:
@@ -53,25 +73,6 @@ const ProjectData = [
       "https://livesyntax.vercel.app/",
       "https://github.com/sohamdata/LiveSyntax/",
       "https://livesyntax-server.glitch.me/wakeup",
-    ],
-  },
-  {
-    title: "Critic.ai [ WIP ]",
-    description:
-      "Creating a game review engine employing sentiment analysis to aggregate critic reviews from diverse websites, resulting in a consolidated rating on a scale of 1-10. Currently working on generating reviews using LLMs.",
-    image: criticai,
-    stats: [
-      "React.js",
-      "TypeScript",
-      "TailwindCSS",
-      "Socket.io",
-      "LlamaIndex",
-      "Large Language Models",
-    ],
-    action: ["Demo", "GitHub"],
-    url: [
-      "https://www.youtube.com/watch?v=j67vs5kmeQA",
-      "https://github.com/critic-ai",
     ],
   },
   {
@@ -123,18 +124,6 @@ const ProjectData = [
     url: [
       "https://github.com/sohamdata/aws-sem3-project",
       "https://user-images.githubusercontent.com/78294692/206841659-06aa6627-f2b6-4636-8492-3a3f725acc03.gif",
-    ],
-  },
-  {
-    title: "Login Dashboard",
-    description:
-      "A login dashboard with field validation and user authentication local storage using React.js, made to practice React Hooks.",
-    image: logindash,
-    stats: ["React.js"],
-    action: ["GitHub", "Live"],
-    url: [
-      "https://github.com/sohamdata/react-login-dashboard",
-      "https://login-dash.netlify.app/",
     ],
   },
   {
@@ -205,10 +194,10 @@ const SkillsInterests = [
       "JavaScript",
       "TypeScript",
       "Node.js",
-      "C++",
-      "Java",
       "SQL",
       "Go",
+      "C++",
+      "Java",
     ],
   },
   {
@@ -216,10 +205,10 @@ const SkillsInterests = [
     tags: [
       "Git",
       "NextJS/React.js",
-      "MySQL",
-      "NoSQL (MongoDB, Firebase)",
-      "Django",
       "Flask",
+      "MySQL",
+      "NoSQL DB's",
+      "Django",
       "AWS",
       "Node.js",
       "Tailwind CSS / Ant Design/ MUI / Bootstrap",
@@ -241,6 +230,7 @@ const SkillsInterests = [
       "Automobiles",
       "Open Source",
       "The Internet",
+      "Whatever interests me",
     ],
   },
 ];
@@ -278,4 +268,4 @@ const Music = [
   "twenty24.aac",
 ];
 
-export { ProjectData, SkillsInterests, Ideas, Backgrounds, Music };
+export { Backgrounds, Ideas, Music, ProjectData, SkillsInterests };
