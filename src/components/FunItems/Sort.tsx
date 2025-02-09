@@ -1,40 +1,44 @@
-import { useState, useEffect } from 'react';
-import styles from './styles.jsx';
+import { useState, useEffect } from "react";
+import { GiPerspectiveDiceSixFacesRandom } from "react-icons/gi";
+import { IoGolf } from "react-icons/io5";
+import LinkButton from "../LinkButton";
+
+const timer = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+
+type SortingAlgorithm =
+  | "Selection Sort"
+  | "Bubble Sort"
+  | "Insertion Sort"
+  | "Quick Sort"
+  | "Merge Sort"
+  | "Heap Sort";
 
 export default function Sort() {
-  const [colors, setColors] = useState([]);
-  const [selectedAlgo, setSelectedAlgo] = useState('Selection Sort (O(n^2))');
-  const [sorting, setSorting] = useState(false);
-  // eslint-disable-next-line
-  useEffect(() => generateColors(100), []);
+  const [colors, setColors] = useState<string[]>([]);
+  const [selectedAlgo, setSelectedAlgo] =
+    useState<SortingAlgorithm>("Selection Sort");
+  const [sorting, setSorting] = useState<boolean>(false);
 
-  const generateColors = n => {
+  useEffect(() => {
+    generateColors(100);
+  }, []);
+
+  const generateColors = (n: number) => {
     if (sorting) return;
-    const colors_ = [];
-
-    for (let i = 0; i < n; i++) {
-      // generate random number in [0, 0xFFFFFF] (color range)
-      const num = ~~(Math.random() * (0xffffff + 1));
-      colors_.push('#' + num.toString(16).padStart(6, 0));
-    }
-
-    setColors(colors_);
+    const newColors = Array.from({ length: n }, () => {
+      const num = Math.floor(Math.random() * 0xffffff);
+      return `#${num.toString(16).padStart(6, "0")}`;
+    });
+    setColors(newColors);
   };
 
-  const timer = ms => new Promise(resolve => setTimeout(resolve, ms));
-
-  /**
-   *
-   * @param {string} color
-   */
-  const colorToInt = color => {
+  const colorToInt = (color: string): number => {
     const [r, g, b] = [color.slice(1, 3), color.slice(3, 5), color.slice(5, 7)];
     return parseInt(r, 16) + parseInt(g, 16) + parseInt(b, 16);
   };
 
   // SELECTION SORT
   const selectionSort = async () => {
-    setSorting(true);
     const colors_ = [...colors];
 
     for (let i = 0; i < colors_.length; i++) {
@@ -48,12 +52,10 @@ export default function Sort() {
       setColors([...colors_]);
       await timer(100);
     }
-    setSorting(false);
   };
 
   // BUBBLE SORT
   const bubbleSort = async () => {
-    setSorting(true);
     const colors_ = [...colors];
 
     while (true) {
@@ -68,12 +70,10 @@ export default function Sort() {
       }
       if (!swapped) break;
     }
-    setSorting(false);
   };
 
   // INSERTION SORT
   const insertionSort = async () => {
-    setSorting(true);
     const colors_ = [...colors];
 
     for (let i = 1; i < colors_.length; i++) {
@@ -87,15 +87,13 @@ export default function Sort() {
       }
       colors_[j + 1] = key;
     }
-    setSorting(false);
   };
 
   // QUICK SORT
   const quickSort = async () => {
-    setSorting(true);
     const colors_ = [...colors];
 
-    const partition = async (low, high) => {
+    const partition = async (low: any, high: any) => {
       const pivot = colors_[high];
       let i = low - 1;
       for (let j = low; j < high; j++) {
@@ -112,7 +110,7 @@ export default function Sort() {
       return i + 1;
     };
 
-    const quickSortHelper = async (low, high) => {
+    const quickSortHelper = async (low: any, high: any) => {
       if (low < high) {
         const pi = await partition(low, high);
         await quickSortHelper(low, pi - 1);
@@ -121,15 +119,13 @@ export default function Sort() {
     };
 
     await quickSortHelper(0, colors_.length - 1);
-    setSorting(false);
   };
 
   // MERGE SORT
   const mergeSort = async () => {
-    setSorting(true);
     const colors_ = [...colors];
 
-    const merge = async (l, m, r) => {
+    const merge = async (l: any, m: any, r: any) => {
       const leftArray = colors_.slice(l, m + 1);
       const rightArray = colors_.slice(m + 1, r + 1);
       let i = 0,
@@ -165,7 +161,7 @@ export default function Sort() {
       }
     };
 
-    const mergeSortHelper = async (l, r) => {
+    const mergeSortHelper = async (l: any, r: any) => {
       if (l < r) {
         const m = Math.floor((l + r) / 2);
         await mergeSortHelper(l, m);
@@ -175,24 +171,28 @@ export default function Sort() {
     };
 
     await mergeSortHelper(0, colors_.length - 1);
-    setSorting(false);
   };
 
   // HEAP SORT
   const heapSort = async () => {
-    setSorting(true);
     const colors_ = [...colors];
 
-    const heapify = async (n, i) => {
+    const heapify = async (n: any, i: any) => {
       let largest = i;
       const left = 2 * i + 1;
       const right = 2 * i + 2;
 
-      if (left < n && colorToInt(colors_[left]) > colorToInt(colors_[largest])) {
+      if (
+        left < n &&
+        colorToInt(colors_[left]) > colorToInt(colors_[largest])
+      ) {
         largest = left;
       }
 
-      if (right < n && colorToInt(colors_[right]) > colorToInt(colors_[largest])) {
+      if (
+        right < n &&
+        colorToInt(colors_[right]) > colorToInt(colors_[largest])
+      ) {
         largest = right;
       }
 
@@ -214,62 +214,68 @@ export default function Sort() {
       await timer(1);
       await heapify(i, 0);
     }
+  };
 
+  const algorithms: Record<SortingAlgorithm, () => Promise<void>> = {
+    "Selection Sort": selectionSort,
+    "Bubble Sort": bubbleSort,
+    "Insertion Sort": insertionSort,
+    "Quick Sort": quickSort,
+    "Merge Sort": mergeSort,
+    "Heap Sort": heapSort,
+  };
+
+  const onSort = async () => {
+    if (sorting) return;
+    setSorting(true);
+    await algorithms[selectedAlgo]();
     setSorting(false);
   };
 
-  const algos = {
-    'Selection Sort (O(n^2))': selectionSort,
-    'Bubble Sort (O(n^2))': bubbleSort,
-    'Insertion Sort (O(n^2))': insertionSort,
-    'Quick Sort (O(nlogn))': quickSort,
-    'Merge Sort (O(nlogn))': mergeSort,
-    'Heap Sort (O(nlogn))': heapSort,
-  };
-
   return (
-    <div style={styles.itemContainer}>
-      <header style={styles.itemHeader}>Sorting Visualization</header>
-      <br />
-      <p style={styles.itemParagraph}>
-        Colors are really just hexadecimal values, so they will be sorted as if the colors are numbers.
-        <br />
-        A way of knowing that the sorting is done is when the colors go from dark to light <br />(kind of fade away)
+    <div className="my-4 p-6 bg-gradient-to-r from-blue-600 to-purple-700 rounded-lg">
+      <h1 className="text-xl font-bold text-white">Sorting Visualization</h1>
+      <p className="text-white mt-2 text-sm">
+        Sorting colors based on their brightness
       </p>
-      <br />
-      <button style={styles.betButton} onClick={() => generateColors(100)}>
-        Randomize
-      </button>
-      <br />
-      <form action="#">
-        <label htmlFor="algo" style={{ ...styles.itemParagraph, marginRight: 10 }}>
-          Algorithm:
-        </label>
-        <select id="algo" name="algo" style={styles.algoSelect} onChange={(e) => setSelectedAlgo(e.target.value)}>
-          {Object.keys(algos).map(algo => (
+
+      <div className="mt-4 flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 items-center justify-center">
+        <LinkButton
+          onClick={() => generateColors(100)}
+          disabled={sorting}
+          icon={<GiPerspectiveDiceSixFacesRandom className="text-xl" />}
+          text="Randomize"
+        />
+
+        <select
+          className="px-6 py-3.5 border-none text-gray-900 text-sm rounded-lg bg-gray-900 text-white font-bold"
+          value={selectedAlgo}
+          onChange={(e) => setSelectedAlgo(e.target.value as SortingAlgorithm)}
+        >
+          {Object.keys(algorithms).map((algo) => (
             <option key={algo} value={algo}>
               {algo}
             </option>
           ))}
         </select>
-      </form>
-      <br />
-      <button
-        style={styles.betButton}
-        onClick={() => {
-          if (!sorting) {
-            algos[selectedAlgo]();
-          }
-        }}
-      >
-        Sort
-      </button>
-      <br />
-      {colors.map((color, i) => (
-        <div key={i} style={{ ...styles.colorCell, backgroundColor: color }} />
-      ))}
-      <p style={{ ...styles.itemParagraph, fontSize: '0.7rem', fontStyle: 'italic' }}>
-        if the Randomize button seems stuck, it (probably) means the sorting is still in progress </p>
+
+        <LinkButton
+          onClick={onSort}
+          disabled={sorting}
+          icon={<IoGolf className="text-xl" />}
+          text="Sort"
+        />
+      </div>
+
+      <div className="flex flex-wrap mt-6">
+        {colors.map((color, index) => (
+          <div
+            key={index}
+            className="w-4 h-4 rounded-sm m-1"
+            style={{ backgroundColor: color }}
+          />
+        ))}
+      </div>
     </div>
   );
 }

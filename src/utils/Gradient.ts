@@ -1,6 +1,13 @@
 import React from 'react';
-const Gradient = ({ from, to, dir, children }) => {
 
+interface GradientProps {
+    from: string;
+    to: string;
+    dir: 'left-to-right' | 'right-to-left' | 'top-to-bottom' | 'bottom-to-top';
+    children: React.ReactNode;
+}
+
+export default function Gradient  ({ from, to, dir, children }: GradientProps) { {
     const calculateDirection = () => {
         if (dir === 'left-to-right') return 'to right'
         if (dir === 'right-to-left') return 'to left'
@@ -15,6 +22,5 @@ const Gradient = ({ from, to, dir, children }) => {
             WebkitTextFillColor: 'transparent'
         }
     }, [children])
-};
-
-export default Gradient;
+}
+}

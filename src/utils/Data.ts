@@ -164,13 +164,13 @@ const ProjectData = [
     ],
   },
   {
-    title: "sohamisa.live",
+    title: "og website",
     description:
       "One of the first websites I made, it was meant to teach myself and play around with HTML, CSS, JavaScript",
     image: sohamdatta,
     stats: ["JavaScript", "HTML", "CSS", "algorithms"],
     action: ["GitHub", "Website"],
-    url: ["https://github.com/sohamdata/website", "https://sohamisa.live/"],
+    url: ["https://github.com/sohamdata/website", "https://sohamdata.github.io/website/"],
   },
   {
     title: "this website",
@@ -268,4 +268,4 @@ const Music = [
   "twenty24.aac",
 ];
 
-export { Backgrounds, Ideas, Music, ProjectData, SkillsInterests };
+export { Backgrounds, Ideas as IdeasObj, Music, ProjectData, SkillsInterests };
