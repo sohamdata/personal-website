@@ -18,28 +18,27 @@ export default function Fun() {
   const audio = new Audio(`/music/${selectedSong}`);
 
   useEffect(() => {
-    var playing = audio.play();
-
+    const playing = audio.play();
     if (playing !== undefined) {
       playing
-        .then((_) => {
+        .then(() => {
           audio.loop = true;
           audio.volume = 0.3;
         })
-        .catch((error) => {
-          console.log(error);
-        });
+        .catch((error) => console.log(error));
     }
 
     return () => audio.pause();
   }, []);
 
   return (
-    <div>
+    <div className="w-full overflow-hidden flex flex-col items-center">
       <Background />
-      <Hash />
-      <Sort />
-      <BinaryString />
+      <div className="max-w-screen-md w-full">
+        <Hash />
+        <Sort />
+        <BinaryString />
+      </div>
     </div>
   );
 }

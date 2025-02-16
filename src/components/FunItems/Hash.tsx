@@ -84,14 +84,14 @@ export default function Hash() {
   ];
 
   return (
-    <div className="p-6 bg-gradient-to-r from-blue-600 to-purple-700 rounded-lg">
-      <h2 className="text-2xl font-bold text-gray-200">Hash Converter</h2>
-      <p className="mt-2 text-gray-300">
+    <div className="p-6 bg-gradient-to-r from-dark-coral to-golden-ray rounded-lg">
+      <h2 className="text-2xl font-bold text-electric-blue">Hash Converter</h2>
+      <p className="mt-2 text-alpine-green">
         Enter a text value, and see various hash outputs.
       </p>
 
       <input
-        className="mt-4 w-full p-3 text-white text-lg bg-black rounded-md text-center"
+        className="mt-4 w-full p-3 text-creme-white text-lg bg-obsidian-navy rounded-md text-center"
         placeholder="Enter text"
         value={textToHash}
         onChange={(e) => setTextToHash(e.target.value)}
@@ -100,17 +100,17 @@ export default function Hash() {
       {hashes.concat(customHash).map((hash) => (
         <div
           key={hash}
-          className="mt-4 p-3 bg-black text-white rounded-md text-center"
+          className="mt-4 p-3 bg-velvet-night text-steel-shadow rounded-md text-center"
         >
-          <code className="text-red-400">
-            {hash} (<span className="text-yellow-400">'{textToHash}'</span>) ={" "}
+          <code className="text-electric-blue">
+            {hash} (<span className="text-golden-ray">'{textToHash}'</span>) ={" "}
           </code>
           {textToHash.toLowerCase() === "france" ? (
             "aint no way"
           ) : textToHash === "69" ? (
             "nice"
           ) : (
-            <span className="text-green-400">
+            <span className="text-dusty-orange">
               {hashAlgoHelper(hash, textToHash)}
             </span>
           )}

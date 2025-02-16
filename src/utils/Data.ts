@@ -218,7 +218,7 @@ const SkillsInterests = [
     ],
   },
   {
-    name: "Hobbies",
+    name: "Peace",
     tags: [
       "Outdoors",
       "Travel",

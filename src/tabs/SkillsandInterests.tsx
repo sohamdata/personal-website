@@ -1,6 +1,7 @@
+import { FaFileAlt, FaGithub } from "react-icons/fa";
+import { peace } from "../assets/images";
 import LinkButton from "../components/LinkButton";
 import { SkillsInterests } from "../utils/Data";
-import { FaGithub, FaFileAlt } from "react-icons/fa";
 
 export default function SkillsandInterests() {
   return (
@@ -17,17 +18,38 @@ export default function SkillsandInterests() {
           text="Resume"
         />
       </div>
+
       {SkillsInterests.map((item) => (
         <div
           key={item.name}
-          className="bg-gray-800 p-6 rounded-lg shadow-lg transform transition-transform hover:scale-105"
+          className={`p-6 rounded-lg shadow-lg transform transition-transform hover:scale-105 ${
+            item.name === "Peace"
+              ? "bg-cover bg-center bg-no-repeat"
+              : "bg-urban-steel"
+          }`}
+          style={
+            item.name === "Peace" ? { backgroundImage: `url(${peace})` } : {}
+          }
         >
-          <h2 className="text-2xl font-bold text-white">{item.name}</h2>
+          <h2
+            className={`text-2xl font-bold ${
+              item.name === "Peace"
+                ? "text-olive-gem drop-shadow-lg"
+                : "text-frozen-glow"
+            }`}
+          >
+            {item.name}
+          </h2>
+
           <div className="mt-4 flex flex-wrap gap-3 justify-center">
             {item.tags.map((tag) => (
               <span
                 key={tag}
-                className="bg-gray-900 text-white px-4 py-2 rounded-full text-sm font-medium"
+                className={`px-4 py-2 rounded-full text-sm font-medium ${
+                  item.name === "Peace"
+                    ? "bg-black/30 text-white backdrop-blur-sm"
+                    : "bg-steel-shadow text-creme-white"
+                }`}
               >
                 {tag}
               </span>

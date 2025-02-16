@@ -1,12 +1,48 @@
 @import "tailwindcss";
 
+@theme {
+    --color-frozen-glow: #F6EBEF;
+    --color-creme-white: #D1CDC2;
+    --color-soft-titanium: #CFD0D4;
+    --color-copper-red: #B23B32;
+    --color-royal-blush: #6A2A5B;
+    --color-dark-ruby: #70000E;
+    --color-submarine-blue: #405867;
+    --color-blue-horizon: #0064B7;
+    --color-obsidian-navy: #00295B;
+    --color-golden-ray: #DAB986;
+    --color-army-green: #696A5C;
+    --color-olive-gem: #18704A;
+    --color-ocean-depths: #184A4C;
+    --color-void-black: #050505;
+    --color-velvet-night: #280A22;
+    --color-urban-steel: #35383E;
+    --color-militar-night: #323F35;
+    --color-alpine-green: #275D5D;
+    --color-steel-shadow: #505353;
+    --color-dark-coral: #D75C37;
+
+    --color-dusty-orange: #E27E5F;
+    --color-neon-pink: #FF007F;
+    --color-cool-gray: #4A4A4A;
+    --color-deep-blue: #003366;
+    --color-golden-yellow: #FFD700;
+    --color-dark-teal: #005F5F;
+    --color-charcoal-black: #1C1C1C;
+    --color-pale-beige: #D2B48C;
+    --color-electric-blue: #00BFFF;
+    --color-muted-green: #556B2F;
+}
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
+  color: var(--color-creme-white);
+
+  background: var(--color-void-black);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -19,7 +55,7 @@ html {
 }
 
 ::selection {
-  background: #660033;
+  background: var(--color-copper-red);
 }
 
 ::-webkit-scrollbar {
@@ -27,9 +63,13 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #CD0404;
+  background: var(--color-dark-ruby);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #0015cc;
+  background: var(--color-obsidian-navy);
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-void-black);
 }

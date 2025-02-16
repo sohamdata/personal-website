@@ -233,9 +233,11 @@ export default function Sort() {
   };
 
   return (
-    <div className="my-4 p-6 bg-gradient-to-r from-blue-600 to-purple-700 rounded-lg">
-      <h1 className="text-xl font-bold text-white">Sorting Visualization</h1>
-      <p className="text-white mt-2 text-sm">
+    <div className="my-4 p-6 bg-gradient-to-r from-dark-coral to-obsidian-navy rounded-lg">
+      <h1 className="text-xl font-bold text-electric-blue">
+        Sorting Visualization
+      </h1>
+      <p className="text-creme-white mt-2 text-sm">
         Sorting colors based on their brightness
       </p>
 
@@ -243,12 +245,14 @@ export default function Sort() {
         <LinkButton
           onClick={() => generateColors(100)}
           disabled={sorting}
-          icon={<GiPerspectiveDiceSixFacesRandom className="text-xl" />}
+          icon={
+            <GiPerspectiveDiceSixFacesRandom className="text-xl text-neon-pink" />
+          }
           text="Randomize"
         />
 
         <select
-          className="px-6 py-3.5 border-none text-gray-900 text-sm rounded-lg bg-gray-900 text-white font-bold"
+          className="px-6 py-3.5 border-none text-golden-ray text-sm rounded-lg bg-urban-steel font-bold"
           value={selectedAlgo}
           onChange={(e) => setSelectedAlgo(e.target.value as SortingAlgorithm)}
         >
@@ -262,7 +266,7 @@ export default function Sort() {
         <LinkButton
           onClick={onSort}
           disabled={sorting}
-          icon={<IoGolf className="text-xl" />}
+          icon={<IoGolf className="text-xl text-neon-pink" />}
           text="Sort"
         />
       </div>
@@ -271,7 +275,7 @@ export default function Sort() {
         {colors.map((color, index) => (
           <div
             key={index}
-            className="w-4 h-4 rounded-sm m-1"
+            className="w-5 h-5 rounded-md shadow-lg"
             style={{ backgroundColor: color }}
           />
         ))}

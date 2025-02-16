@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { gt } from "../assets/images";
 
 interface Props {
   setCurrentPage: (page: string) => void;
@@ -17,7 +18,7 @@ export default function Segment({ setCurrentPage, currentPage }: Props) {
   return (
     <div className="relative my-10 flex h-[55px] items-center">
       <motion.div
-        className="absolute left-0 w-[20%] h-full bg-black rounded-md z-10"
+        className="absolute left-0 w-[20%] h-full bg-charcoal-black rounded-md z-10"
         initial={{
           left: `${pages.findIndex((p) => p.value === currentPage) * 20}%`,
         }}
@@ -27,13 +28,22 @@ export default function Segment({ setCurrentPage, currentPage }: Props) {
         transition={{ type: "spring", stiffness: 150, damping: 17 }}
       />
 
-      <div className="relative flex h-[45px] w-full rounded-lg font-sans font-semibold bg-[#4B56D2] p-1 cursor-pointer overflow-hidden">
+      <div
+        className={`relative flex h-[45px] w-full rounded-lg font-sans font-semibold p-1 cursor-pointer overflow-hidden
+        ${
+          currentPage === "Fun"
+            ? "bg-cover bg-center bg-no-repeat"
+            : "bg-obsidian-navy"
+        }
+        `}
+        style={currentPage === "Fun" ? { backgroundImage: `url(${gt})` } : {}}
+      >
         {pages.map(({ label, value }) => (
           <motion.div
             key={value}
             onClick={() => setCurrentPage(value)}
             className={`flex-1 flex justify-center items-center relative z-10 transition-colors ${
-              currentPage === value ? "text-[#4B56D2]" : "text-black"
+              currentPage === value ? "text-electric-blue" : "text-creme-white"
             }`}
             whileHover={{ scale: 1.05 }}
           >
