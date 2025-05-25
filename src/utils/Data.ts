@@ -1,18 +1,20 @@
-import {
-  butterflyEffect,
-  cochef,
-  criticai,
+import { images } from "../assets";
+
+const {
   elitecode,
+  livesyntax,
+  reach,
+  perlinnoise,
+  notesapp,
   facerecog,
   golang,
-  livesyntax,
-  notesapp,
-  perlinnoise,
-  reach,
-  sohamdatta,
-  tictactoe,
   wordle,
-} from "../assets/images";
+  cochef,
+  tictactoe,
+  sohamdatta,
+  butterflyEffect,
+  criticai,
+} = images;
 
 const ProjectData = [
   {
@@ -257,15 +259,4 @@ const Backgrounds = [
   "https://glslsandbox.com/e#99536.6",
 ];
 
-const Music = [
-  "closer2.aac",
-  "ego.aac",
-  "icarus.aac",
-  "peaked.aac",
-  "scifi.aac",
-  "startend.aac",
-  "tomtom.aac",
-  "twenty24.aac",
-];
-
-export { Backgrounds, Ideas as IdeasObj, Music, ProjectData, SkillsInterests };
+export { Backgrounds, Ideas as IdeasObj, ProjectData, SkillsInterests };

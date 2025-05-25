@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import { mtn } from "../assets/images";
+import { images } from "../assets";
 
 export default function Footer() {
   const [expanded, setExpanded] = useState(false);
@@ -20,7 +20,7 @@ export default function Footer() {
         } mb-0 rounded-sm flex flex-col w-full justify-center items-center 
           bg-cover bg-center bg-no-repeat font-semibold transition-all duration-500 
           ${expanded ? "h-[50vh]" : "h-[11vh]"}`}
-        style={{ backgroundImage: `url(${mtn})` }}
+        style={{ backgroundImage: `url(${images.mtn})` }}
       >
         <span
           className={`ml-1 rounded-2xl cursor-pointer ${

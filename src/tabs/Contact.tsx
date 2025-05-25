@@ -58,7 +58,7 @@ export default function Contact() {
           text="GitHub"
         />
         <LinkButton
-          onClick={() => window.open("https://tally.so/r/3yMX9x", "_blank")}
+          onClick={() => window.open("/resume", "_self")}
           icon={<FaFileAlt className="text-xl" />}
           text="Resume"
         />

@@ -1,5 +1,5 @@
 import { FaFileAlt, FaGithub } from "react-icons/fa";
-import { peace } from "../assets/images";
+import { images } from "../assets";
 import LinkButton from "../components/LinkButton";
 import { SkillsInterests } from "../utils/Data";
 
@@ -13,7 +13,7 @@ export default function SkillsandInterests() {
           text="GitHub"
         />
         <LinkButton
-          onClick={() => window.open("https://tally.so/r/3yMX9x", "_blank")}
+          onClick={() => window.open("/resume", "_self")}
           icon={<FaFileAlt className="text-xl" />}
           text="Resume"
         />
@@ -28,7 +28,9 @@ export default function SkillsandInterests() {
               : "bg-urban-steel"
           }`}
           style={
-            item.name === "Peace" ? { backgroundImage: `url(${peace})` } : {}
+            item.name === "Peace"
+              ? { backgroundImage: `url(${images.peace})` }
+              : {}
           }
         >
           <h2

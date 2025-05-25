@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { gt } from "../assets/images";
+import { images } from "../assets";
 
 interface Props {
   setCurrentPage: (page: string) => void;
@@ -36,7 +36,9 @@ export default function Segment({ setCurrentPage, currentPage }: Props) {
             : "bg-obsidian-navy"
         }
         `}
-        style={currentPage === "Fun" ? { backgroundImage: `url(${gt})` } : {}}
+        style={
+          currentPage === "Fun" ? { backgroundImage: `url(${images.gt})` } : {}
+        }
       >
         {pages.map(({ label, value }) => (
           <motion.div

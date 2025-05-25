@@ -17,7 +17,7 @@ export default function LinkButton({
     <button
       onClick={onClick}
       disabled={disabled}
-      className="bg-urban-steel text-frozen-glow font-bold px-6 py-3 rounded-lg flex items-center gap-2 shadow-md hover:bg-steel-shadow transition cursor-pointer"
+      className="bg-urban-steel text-frozen-glow font-bold px-6 py-3 rounded-lg flex items-center gap-2 shadow-md hover:bg-steel-shadow cursor-pointer transition duration-200"
     >
       {icon} {text}
     </button>
