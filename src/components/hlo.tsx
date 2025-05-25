@@ -1,17 +1,19 @@
 import { useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
+import { toast } from "sonner";
 
 export default function GlobalKeyListener() {
   const [_, setTyped] = useState("");
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const location = useLocation();
+  const [audioSrc, setAudioSrc] = useState<string | null>(null);
 
   const START_KEY = import.meta.env.VITE_START_KEY;
   const STOP_KEY = "stop";
-
-  const audioSrc = `${import.meta.env.VITE_R2_BASE_URL}/music/lastname.aac`;
+  const AUDIO_URL = import.meta.env.VITE_FIND_THIS || "";
 
   const isAudioPlaying = useRef(false);
+  const isLoading = useRef(false);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -19,6 +21,15 @@ export default function GlobalKeyListener() {
 
       setTyped((prev) => {
         try {
+          if (!START_KEY || !STOP_KEY || !AUDIO_URL) {
+            console.error("Missing required variables: ", {
+              START_KEY,
+              STOP_KEY,
+              AUDIO_URL,
+            });
+            return prev;
+          }
+
           const updated = (prev + e.key.toLowerCase()).slice(
             -Math.max(START_KEY.length, STOP_KEY.length)
           );
@@ -26,16 +37,43 @@ export default function GlobalKeyListener() {
           if (
             updated.endsWith(START_KEY) &&
             audioRef.current &&
-            !isAudioPlaying.current
+            !isAudioPlaying.current &&
+            !isLoading.current
           ) {
             console.log("brohhhh");
-            audioRef.current
-              ?.play()
-              ?.then(() => {
-                audioRef.current!.loop = true;
-              })
-              ?.catch(console.warn);
-            isAudioPlaying.current = true;
+            toast(<img src="/disc.ico" className="h-7 w-7" />, {
+              description: "'stop' or press esc to pause the genius",
+              duration: 5000,
+            });
+            isLoading.current = true;
+            setAudioSrc(AUDIO_URL);
+
+            // Wait for the audio to be ready before playing
+            const playAudio = () => {
+              audioRef.current
+                ?.play()
+                ?.then(() => {
+                  audioRef.current!.loop = true;
+                  isAudioPlaying.current = true;
+                  isLoading.current = false;
+                })
+                ?.catch((error) => {
+                  console.warn("fumbled keydown :<", error);
+                  setAudioSrc(null);
+                  isAudioPlaying.current = false;
+                  isLoading.current = false;
+                });
+            };
+
+            // Check if audio is ready to play
+            if (audioRef.current.readyState >= 2) {
+              // HAVE_CURRENT_DATA or higher
+              playAudio();
+            } else {
+              audioRef.current.addEventListener("canplay", playAudio, {
+                once: true,
+              });
+            }
           }
 
           if (
@@ -43,14 +81,26 @@ export default function GlobalKeyListener() {
             audioRef.current &&
             isAudioPlaying.current
           ) {
+            console.log("stopping audio");
             audioRef.current.pause();
             audioRef.current.currentTime = 0;
             isAudioPlaying.current = false;
+            isLoading.current = false;
+            setAudioSrc(null);
+            toast(
+              <div className="flex gap-2">
+                <img src="/disc.ico" className="h-7 w-7" />
+                <p>🕵️🔦</p>
+              </div>
+            );
+            // Remove any pending canplay listeners to prevent memory leaks
+            audioRef.current.removeEventListener("canplay", () => {});
           }
 
           return updated;
         } catch (error) {
           console.error("fumbled keydown :(", error);
+          isLoading.current = false;
           return prev;
         }
       });
@@ -60,5 +110,5 @@ export default function GlobalKeyListener() {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [location.pathname]);
 
-  return <audio ref={audioRef} src={audioSrc} preload="auto" />;
+  return <audio ref={audioRef} src={audioSrc || undefined} />;
 }
