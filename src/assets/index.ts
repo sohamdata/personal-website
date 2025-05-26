@@ -1,4 +1,6 @@
 const R2_BASE_URL = import.meta.env.VITE_R2_BASE_URL;
+const MUSIC_FILES_LIST = import.meta.env.VITE_MUSIC_FILES;
+const BETTER_MUSIC_FILES_LIST = import.meta.env.VITE_RANDOM_MUSIC_FILES;
 
 export const images: Record<string, string> = {
   elitecode: `${R2_BASE_URL}/images/EliteCode.png`,
@@ -20,13 +22,10 @@ export const images: Record<string, string> = {
   gt: `${R2_BASE_URL}/images/gt.jpg`,
 };
 
-export const Music: string[] = [
-  `${R2_BASE_URL}/music/closer2.aac`,
-  `${R2_BASE_URL}/music/ego.aac`,
-  `${R2_BASE_URL}/music/icarus.aac`,
-  `${R2_BASE_URL}/music/peaked.aac`,
-  `${R2_BASE_URL}/music/scifi.aac`,
-  `${R2_BASE_URL}/music/startend.aac`,
-  `${R2_BASE_URL}/music/tomtom.aac`,
-  `${R2_BASE_URL}/music/twenty24.aac`,
-];
+export const songs: string[] = MUSIC_FILES_LIST.split(",").map(
+  (file: string) => `${R2_BASE_URL}/music/${file}`
+);
+
+export const songs_better: string[] = BETTER_MUSIC_FILES_LIST.split(",").map(
+  (file: string) => `${R2_BASE_URL}/music/${file}`
+);

@@ -17,7 +17,7 @@ export default function GlobalKeyListener() {
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (location.pathname !== "/" && location.pathname !== "/idk") return;
+      if (location.pathname !== "/") return;
 
       setTyped((prev) => {
         try {

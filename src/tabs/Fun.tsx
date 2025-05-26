@@ -1,36 +1,47 @@
-import { useEffect } from "react";
-import { Music } from "../assets";
+import { useEffect, useRef, useState } from "react";
+import { songs } from "../assets";
 import Background from "../components/Background";
 import { BinaryString, Hash, Sort } from "../components/FunItems";
 
 export default function Fun() {
   let randomIndex = localStorage.getItem("audioIndex");
+  const [selectedSong, setSelectedSong] = useState<string | null>(null);
 
-  if (randomIndex === null) {
-    // pick a random song
-    randomIndex = Math.floor(Math.random() * Music.length).toString();
-    localStorage.setItem("audioIndex", randomIndex);
-  } else {
-    // play next song in the list
-    randomIndex = ((parseInt(randomIndex) + 1) % Music.length).toString();
-    localStorage.setItem("audioIndex", randomIndex);
-  }
+  const audioRef = useRef<HTMLAudioElement | null>(null);
 
-  const selectedSong = Music[parseInt(randomIndex)];
   useEffect(() => {
-    const audio = new Audio(selectedSong);
-    const playing = audio.play();
-    if (playing !== undefined) {
-      playing
-        .then(() => {
-          audio.loop = true;
-          audio.volume = 0.3;
-        })
-        .catch((error) => console.log(error));
+    if (randomIndex === null) {
+      // pick a random song
+      randomIndex = Math.floor(Math.random() * songs.length).toString();
+      localStorage.setItem("audioIndex", randomIndex);
+    } else {
+      // play next song in the list
+      randomIndex = ((parseInt(randomIndex) + 1) % songs.length).toString();
+      localStorage.setItem("audioIndex", randomIndex);
     }
-
-    return () => audio.pause();
+    setSelectedSong(songs[parseInt(randomIndex)]);
   }, []);
+
+  useEffect(() => {
+    if (selectedSong) {
+      audioRef.current = new Audio(selectedSong);
+      const playing = audioRef.current.play();
+      if (playing !== undefined) {
+        playing
+          .then(() => {
+            audioRef.current!.loop = true;
+            audioRef.current!.volume = 0.3;
+          })
+          .catch((error) => console.log(error));
+      }
+    }
+    return () => {
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current = null;
+      }
+    };
+  }, [selectedSong]);
 
   return (
     <div className="w-full overflow-hidden flex flex-col items-center">
