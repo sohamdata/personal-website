@@ -50,7 +50,6 @@ export default function Something({}: Props) {
           .then(() => {
             setIsPlaying(true);
             audioRef.current!.loop = true;
-            audioRef.current!.volume = 0.1;
           })
           .catch((error) => {
             console.error("Playback error:", error);
@@ -93,7 +92,6 @@ export default function Something({}: Props) {
           .then(() => {
             setIsPlaying(true);
             audioRef.current!.loop = true;
-            audioRef.current!.volume = 0.1;
           })
           .catch((error) => {
             console.error("Shuffle playback error:", error);
