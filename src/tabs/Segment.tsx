@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { images } from "../assets";
 
 interface Props {
@@ -15,6 +15,12 @@ export default function Segment({ setCurrentPage, currentPage }: Props) {
     { label: "Contact", value: "Contact" },
   ];
 
+  const backgroundVariants = {
+    initial: { opacity: 0, x: "-100%" },
+    animate: { opacity: 1, x: "0%" },
+    exit: { opacity: 0, x: "100%" },
+  };
+
   return (
     <div className="relative my-10 flex h-[55px] items-center">
       <motion.div
@@ -28,18 +34,32 @@ export default function Segment({ setCurrentPage, currentPage }: Props) {
         transition={{ type: "spring", stiffness: 150, damping: 17 }}
       />
 
-      <div
-        className={`relative flex h-[45px] w-full rounded-lg font-sans font-semibold p-1 cursor-pointer overflow-hidden
-        ${
-          currentPage === "Fun"
-            ? "bg-cover bg-center bg-no-repeat"
-            : "bg-obsidian-navy"
-        }
-        `}
-        style={
-          currentPage === "Fun" ? { backgroundImage: `url(${images.gt})` } : {}
-        }
-      >
+      <div className="relative flex h-[45px] w-full rounded-lg font-sans font-semibold p-1 cursor-pointer overflow-hidden">
+        <AnimatePresence mode="wait">
+          {currentPage === "Fun" ? (
+            <motion.div
+              key="fun-bg"
+              className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+              style={{ backgroundImage: `url(${images.gt})` }}
+              variants={backgroundVariants}
+              initial="initial"
+              animate="animate"
+              exit="exit"
+              transition={{ duration: 0.3 }}
+            />
+          ) : (
+            <motion.div
+              key="default-bg"
+              className="absolute inset-0 bg-obsidian-navy"
+              variants={backgroundVariants}
+              initial="initial"
+              animate="animate"
+              exit="exit"
+              transition={{ duration: 0.3 }}
+            />
+          )}
+        </AnimatePresence>
+
         {pages.map(({ label, value }) => (
           <motion.div
             key={value}
