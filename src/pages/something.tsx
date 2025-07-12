@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { GiPistolGun } from "react-icons/gi";
+import { toast } from "sonner";
 import { songs_better } from "../assets";
 import StemLoader from "../components/loader";
 
@@ -27,14 +28,23 @@ export default function Something({}: Props) {
       localStorage.setItem("audioIndex2", randomIndex);
     }
     setSelectedSong(songs_better[parseInt(randomIndex)]);
+
+    return () => {
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current = null;
+      }
+    };
   }, []);
 
-  const playAudio = () => {
-    if (selectedSong) {
-      console.log("Playing song:", selectedSong);
-      audioRef.current = new Audio(selectedSong);
+  const playAudio = (song: string | null = selectedSong) => {
+    if (song) {
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current = null;
+      }
+      audioRef.current = new Audio(song);
       const playPromise = audioRef.current.play();
-      console.log("playPromise:", playPromise);
       if (playPromise !== undefined) {
         playPromise
           .then(() => {
@@ -43,6 +53,9 @@ export default function Something({}: Props) {
           })
           .catch((error) => {
             console.error("Playback error:", error);
+            toast.error("Failed to play audio 🥀");
+            setIsPlaying(false);
+            audioRef.current = null;
           });
       }
     }
@@ -56,14 +69,14 @@ export default function Something({}: Props) {
   };
 
   const shuffleSong = () => {
+    toast.info("Shuffling", { duration: 2000 });
     // Stop current audio if playing
     if (audioRef.current && isPlaying) {
       audioRef.current.pause();
-      // audioRef.current = null;
+      audioRef.current = null;
     }
     setIsPlaying(false);
 
-    // Select new random song
     const newIndex = (
       (parseInt(localStorage.getItem("audioIndex2") || "0") + 1) %
       songs_better.length
@@ -72,11 +85,9 @@ export default function Something({}: Props) {
     const newSong = songs_better[parseInt(newIndex)];
     setSelectedSong(newSong);
 
-    console.log("Shuffling to song:", newSong);
-
     setTimeout(() => {
-      playAudio();
-    }, 2000);
+      playAudio(newSong);
+    }, 1000);
   };
 
   return (
@@ -100,7 +111,7 @@ export default function Something({}: Props) {
             if (isPlaying) {
               pauseAudio();
             } else {
-              playAudio();
+              playAudio(selectedSong);
             }
           }}
         />
