@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "soham's resume",
-  description:
-    "with 1+ yr experience, hire a driven, cracked software engineer / co-founder",
+  title: "gr8",
+  description: "contact",
 };
 
-export default function ResumeLayout({
+export default function SomethingLayout({
   children,
 }: {
   children: React.ReactNode;
