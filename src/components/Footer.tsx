@@ -1,4 +1,7 @@
+"use client";
+
 import { useRef, useState } from "react";
+import Image from "next/image";
 import { images } from "../assets";
 
 export default function Footer() {
@@ -16,16 +19,23 @@ export default function Footer() {
     <>
       <footer
         className={`my-2 md:mt-12 ${
-          expanded && "mb-5"
-        } mb-0 rounded-sm flex flex-col w-full justify-center items-center 
-          bg-cover bg-center bg-no-repeat font-semibold transition-all duration-500 
-          ${expanded ? "h-[50vh]" : "h-[11vh]"}`}
-        style={{ backgroundImage: `url(${images.mtn})` }}
+          expanded ? "mb-5" : "mb-0"
+        } rounded-sm flex flex-col w-full justify-center items-center font-semibold transition-all duration-500 ${
+          expanded ? "h-[50vh]" : "h-[11vh]"
+        } relative overflow-hidden`}
       >
+        <Image
+          src={images.mtn}
+          alt="Mountain Background"
+          fill
+          style={{ objectFit: "cover", objectPosition: "center" }}
+          className="bg-no-repeat z-[-1]"
+          quality={75}
+        />
         <span
           className={`ml-1 rounded-2xl cursor-pointer ${
             expanded ? "text-urban-steel" : "text-frozen-glow"
-          }`}
+          } z-10`}
           onClick={showWebsite}
         >
           &copy; 2025 Soham Datta
@@ -33,7 +43,7 @@ export default function Footer() {
 
         {expanded && (
           <div
-            className="w-[90%] md:w-[70%] h-[80%] mt-4 bg-urban-steel rounded-lg p-4 shadow-lg"
+            className="w-[90%] md:w-[70%] h-[80%] mt-4 bg-urban-steel rounded-lg p-4 shadow-lg z-10" // Added z-10
             ref={footerRef}
           >
             <iframe

@@ -237,9 +237,14 @@ export default function Sort() {
       <h1 className="text-xl font-bold text-electric-blue">
         Sorting Visualization
       </h1>
-      <p className="text-creme-white mt-2 text-sm">
-        Sorting colors based on their brightness
-      </p>
+      <div className="div flex flex-col group">
+        <p className="text-creme-white mt-2 text-sm">
+          Sorting colors based on their brightness
+        </p>
+        <p className="text-creme-white mt-1 text-sm italic opacity-0 group-hover:opacity-100 transition">
+          (in nerd terms, the sum of their RGB values)
+        </p>
+      </div>
 
       <div className="mt-4 flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 items-center justify-center">
         <LinkButton

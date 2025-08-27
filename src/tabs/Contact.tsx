@@ -42,30 +42,26 @@ export default function Contact() {
           </button>
         </form>
       </div>
-
-      {/* Social Links */}
       <div className="flex flex-wrap justify-center gap-4 text-2xl w-full">
         <LinkButton
-          onClick={() =>
-            window.open("https://linkedin.com/in/sohamdata", "_blank")
-          }
+          link="https://linkedin.com/in/sohamdata"
           icon={<FaLinkedin className="text-xl" />}
           text="LinkedIn"
         />
         <LinkButton
-          onClick={() => window.open("https://github.com/sohamdata", "_blank")}
+          link="https://github.com/sohamdata"
           icon={<FaGithub className="text-xl" />}
           text="GitHub"
         />
         <LinkButton
-          onClick={() => window.open("/resume", "_self")}
-          icon={<FaFileAlt className="text-xl" />}
-          text="Resume"
-        />
-        <LinkButton
-          onClick={() => window.open("https://leetcode.com/ssohamm/", "_blank")}
+          link="https://leetcode.com/ssohamm/"
           icon={<SiLeetcode className="text-xl" />}
           text="LeetCode"
+        />
+        <LinkButton
+          link="/resume"
+          icon={<FaFileAlt className="text-xl" />}
+          text="Resume"
         />
       </div>
     </div>

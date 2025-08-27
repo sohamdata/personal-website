@@ -1,29 +1,23 @@
-import { AnimatePresence, motion } from "framer-motion";
-import Footer from "../components/Footer";
-import {
-  Contact,
-  Fun,
-  Intro,
-  Projects,
-  Segment,
-  SkillsandInterests,
-} from "../tabs/index";
-import Gradient from "../utils/Gradient";
-import { pallete } from "../utils/pallete";
-import useLocalStorage from "../utils/useLocalStorage";
+"use client";
 
-type Page = "Hi" | "SkillsandInterests" | "Projects" | "Fun" | "Contact";
+import Footer from "@/components/Footer";
+import { Page, PAGES } from "@/utils/Data";
+import Gradient from "@/utils/Gradient";
+import { pallete } from "@/utils/pallete";
+import { AnimatePresence, motion } from "framer-motion";
+import { useState } from "react";
+import { Contact, Fun, Intro, Projects, Segment, Skills } from "../../tabs";
 
 export default function Home() {
-  const [currentPage, setCurrentPage] = useLocalStorage("currentPage", "Hi");
+  const [currentPage, setCurrentPage] = useState(PAGES.Hi);
 
-  const pages: Record<Page, React.ReactNode> = {
-    Hi: <Intro changeTab={setCurrentPage} />,
-    SkillsandInterests: <SkillsandInterests />,
-    Projects: <Projects />,
-    Fun: <Fun />,
-    Contact: <Contact />,
-  };
+  const pages = {
+    [PAGES.Hi]: <Intro setCurrentPage={setCurrentPage} />,
+    [PAGES.Skills]: <Skills />,
+    [PAGES.Projects]: <Projects />,
+    [PAGES.Fun]: <Fun />,
+    [PAGES.Contact]: <Contact />,
+  } as Record<Page, React.ReactNode>;
 
   const headerVariants = {
     initial: { opacity: 0, y: 10 },

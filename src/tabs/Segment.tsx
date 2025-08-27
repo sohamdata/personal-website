@@ -1,19 +1,17 @@
+import { Page, PAGES } from "@/utils/Data";
 import { AnimatePresence, motion } from "framer-motion";
 import { images } from "../assets";
+import Image from "next/image";
 
 interface Props {
-  setCurrentPage: (page: string) => void;
   currentPage: string;
+  setCurrentPage: (page: Page) => void;
 }
 
-export default function Segment({ setCurrentPage, currentPage }: Props) {
-  const pages: { label: string; value: string }[] = [
-    { label: "Hi", value: "Hi" },
-    { label: "Skills", value: "SkillsandInterests" },
-    { label: "Projects", value: "Projects" },
-    { label: "Fun", value: "Fun" },
-    { label: "Contact", value: "Contact" },
-  ];
+export default function Segment({ currentPage, setCurrentPage }: Props) {
+  const pages: { label: string; value: Page }[] = Object.entries(PAGES).map(
+    ([key, value]) => ({ label: value, value: key as Page })
+  );
 
   const backgroundVariants = {
     initial: { opacity: 0, x: "-100%" },
@@ -40,13 +38,21 @@ export default function Segment({ setCurrentPage, currentPage }: Props) {
             <motion.div
               key="fun-bg"
               className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-              style={{ backgroundImage: `url(${images.gt})` }}
               variants={backgroundVariants}
               initial="initial"
               animate="animate"
               exit="exit"
               transition={{ duration: 0.3 }}
-            />
+            >
+              <Image
+                src={images.gt}
+                alt="Fun Section Background"
+                fill
+                style={{ objectFit: "cover", objectPosition: "center" }}
+                className="bg-no-repeat"
+                quality={75}
+              />
+            </motion.div>
           ) : (
             <motion.div
               key="default-bg"

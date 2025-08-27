@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useRef, useState } from "react";
 import { songs } from "../assets";
 import Background from "../components/Background";
@@ -6,16 +8,13 @@ import { BinaryString, Hash, Sort } from "../components/FunItems";
 export default function Fun() {
   let randomIndex = localStorage.getItem("audioIndex");
   const [selectedSong, setSelectedSong] = useState<string | null>(null);
-
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
     if (randomIndex === null) {
-      // pick a random song
       randomIndex = Math.floor(Math.random() * songs.length).toString();
       localStorage.setItem("audioIndex", randomIndex);
     } else {
-      // play next song in the list
       randomIndex = ((parseInt(randomIndex) + 1) % songs.length).toString();
       localStorage.setItem("audioIndex", randomIndex);
     }
