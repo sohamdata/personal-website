@@ -1,8 +1,10 @@
+"use client";
+
+import { songs_better } from "@/assets";
+import StemLoader from "@/components/loader";
 import { useEffect, useRef, useState } from "react";
 import { GiPistolGun } from "react-icons/gi";
 import { toast } from "sonner";
-import { songs_better } from "../assets";
-import StemLoader from "../components/loader";
 
 type Props = {};
 
@@ -102,7 +104,7 @@ export default function Something({}: Props) {
         onMouseLeave={() => setHovered(false)}
       >
         <img
-          src="/disc.ico"
+          src="/icons/disc.ico"
           alt="pp"
           className={`w-5 h-5 cursor-pointer transition-transform duration-200 ${
             isPlaying ? "animate-spin" : "hover:scale-150"

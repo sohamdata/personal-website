@@ -1,8 +1,11 @@
+import { CURRENT_PAGE_KEY, Page } from "@/utils/Data";
+import store from "store";
+
 interface IntroProps {
-  changeTab: (tab: string) => void;
+  setCurrentPage: (page: Page) => void;
 }
 
-export default function Intro({ changeTab }: IntroProps) {
+export default function Intro({ setCurrentPage }: IntroProps) {
   return (
     <div className="p-6 text-frozen-glow text-lg leading-relaxed">
       <p>Hey there, 👋. Thanks for visiting.</p>
@@ -32,7 +35,7 @@ export default function Intro({ changeTab }: IntroProps) {
           Full-Stack development (React.js, Flask, SQL/NoSQL databases,{" "}
           <span
             className="text-electric-blue font-semibold cursor-crosshair"
-            onClick={() => changeTab("Fun")}
+            onClick={() => setCurrentPage("Fun")}
           >
             Go
           </span>
@@ -45,7 +48,7 @@ export default function Intro({ changeTab }: IntroProps) {
         Feel free to look around, or reach out through the{" "}
         <span
           className="text-electric-blue font-semibold cursor-pointer"
-          onClick={() => changeTab("Contact")}
+          onClick={() => setCurrentPage("Contact")}
         >
           Contact
         </span>{" "}

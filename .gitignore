@@ -1,3 +1,7 @@
+# next files
+.next
+out
+
 # Logs
 logs
 *.log

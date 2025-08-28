@@ -1,24 +1,26 @@
+"use client";
+
+import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { useLocation } from "react-router-dom";
 import { toast } from "sonner";
 
 export default function GlobalKeyListener() {
   const [_, setTyped] = useState("");
   const audioRef = useRef<HTMLAudioElement | null>(null);
-  const location = useLocation();
+  const pathname = usePathname();
   const [audioSrc, setAudioSrc] = useState<string | null>(null);
 
-  const START_KEY = import.meta.env.VITE_START_KEY;
+  const START_KEY = process.env.NEXT_PUBLIC_START_KEY || "start";
   const STOP_KEY = "stop";
-  const AUDIO_URL = import.meta.env.VITE_FIND_THIS || "";
+  const AUDIO_URL = process.env.NEXT_PUBLIC_FIND_THIS || "";
 
   const isAudioPlaying = useRef(false);
   const isLoading = useRef(false);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (location.pathname !== "/") return;
-
+      if (pathname !== "/") return;
       setTyped((prev) => {
         try {
           if (!START_KEY || !STOP_KEY || !AUDIO_URL) {
@@ -41,10 +43,13 @@ export default function GlobalKeyListener() {
             !isLoading.current
           ) {
             console.log("brohhhh");
-            toast(<img src="/disc.ico" className="h-7 w-7" />, {
-              description: "'stop' or press esc to pause the genius",
-              duration: 5000,
-            });
+            toast(
+              <Image src="/icons/disc.ico" alt="ye" width={28} height={28} />,
+              {
+                description: "'stop' or press esc to pause the genius",
+                duration: 5000,
+              }
+            );
             isLoading.current = true;
             setAudioSrc(AUDIO_URL);
 
@@ -89,7 +94,7 @@ export default function GlobalKeyListener() {
             setAudioSrc(null);
             toast(
               <div className="flex gap-2">
-                <img src="/disc.ico" className="h-7 w-7" />
+                <img src="/icons/disc.ico" className="h-7 w-7" />
                 <p>🕵️🔦</p>
               </div>
             );
@@ -108,7 +113,7 @@ export default function GlobalKeyListener() {
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [location.pathname]);
+  }, [pathname]);
 
   return <audio ref={audioRef} src={audioSrc || undefined} />;
 }

@@ -1,6 +1,9 @@
-const R2_BASE_URL = import.meta.env.VITE_R2_BASE_URL;
-const MUSIC_FILES_LIST = import.meta.env.VITE_MUSIC_FILES;
-const BETTER_MUSIC_FILES_LIST = import.meta.env.VITE_RANDOM_MUSIC_FILES;
+"use client";
+
+const R2_BASE_URL = process.env.NEXT_PUBLIC_R2_BASE_URL || "";
+const MUSIC_FILES_LIST = process.env.NEXT_PUBLIC_MUSIC_FILES || "";
+const BETTER_MUSIC_FILES_LIST =
+  process.env.NEXT_PUBLIC_RANDOM_MUSIC_FILES || "";
 
 export const images: Record<string, string> = {
   elitecode: `${R2_BASE_URL}/images/EliteCode.png`,

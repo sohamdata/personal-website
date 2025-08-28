@@ -16,7 +16,28 @@ const {
   criticai,
 } = images;
 
-const ProjectData = [
+export const PAGES = {
+  Hi: "Hi",
+  Skills: "Skills",
+  Projects: "Projects",
+  Fun: "Fun",
+  Contact: "Contact",
+};
+
+export type Page = keyof typeof PAGES;
+
+export const CURRENT_PAGE_KEY = "currentPage";
+
+interface Project {
+  title: string;
+  description: string;
+  image: string;
+  stats: string[];
+  action: string[];
+  url: string[];
+}
+
+const ProjectData: Project[] = [
   {
     title: "Critic.ai",
     description:
@@ -172,7 +193,10 @@ const ProjectData = [
     image: sohamdatta,
     stats: ["JavaScript", "HTML", "CSS", "algorithms"],
     action: ["GitHub", "Website"],
-    url: ["https://github.com/sohamdata/website", "https://sohamdata.github.io/website/"],
+    url: [
+      "https://github.com/sohamdata/website",
+      "https://sohamdata.github.io/website/",
+    ],
   },
   {
     title: "this website",
